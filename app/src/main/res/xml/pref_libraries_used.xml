@@ -1,0 +1,40 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Libraries used">
+
+        <Preference
+            android:key="libraries_frida"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="License: WXWINDOWS LIBRARY LICENCE. Check out frida.re for more information, it's worth it."
+            android:title="Frida" />
+        <Preference
+            android:key="libraries_json11"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="License: MIT License. https://github.com/dropbox/json11"
+            android:title="json11" />
+        <Preference
+            android:key="libraries_pogoprotos"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="License: MIT. https://github.com/Furtif/POGOProtos"
+            android:title="POGOProtos" />
+        <Preference
+            android:key="libraries_curl"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="License: Custom MIT/X. https://curl.haxx.se"
+            android:title="Curl" />
+
+        <Preference
+            android:key="library_smashicons"
+            android:summary="Map location icon by https://www.flaticon.com/authors/smashicons"
+            android:title="Icon"
+            />
+        <Preference
+            android:key="library_gymicon"
+            android:summary="Gym icon by https://www.flaticon.com/de/autoren/roundicons-freebies"
+            android:title="Gym icon"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>

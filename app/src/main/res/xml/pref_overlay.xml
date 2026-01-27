@@ -1,0 +1,42 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <!--suppress AndroidDomInspection -->
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+
+    <SwitchPreference
+        android:id="@+id/iv_overlay_enabled_switch"
+        android:key="iv_overlay_enabled"
+        android:onClick="switchIvOverlayAction"
+        android:summary="Enables the overlay"
+        android:title="Overlay" />
+
+    <com.mad.pogoenhancer.ui.misc.SeekBarPreference
+        android:defaultValue="100"
+        android:dialogMessage="@string/settings_dialog_message"
+        android:key="overlay_scaling"
+        android:max="100"
+        android:summary="@string/settings_summary"
+        android:text="@string/settings_unit"
+        android:title="@string/settings_title" />
+
+    <SwitchPreference
+        android:id="@+id/overlay_show_iv_element"
+        android:key="overlay_show_iv_element"
+        android:defaultValue="true"
+        android:summary="Show / hide the IV overlay on start"
+        android:title="Show IV overlay" />
+
+    <ListPreference
+        android:id="@+id/iv_toast_duration"
+        android:entries="@array/iv_toast_duration_options"
+        android:entryValues="@array/iv_toast_duration_options"
+        android:key="iv_toast_duration"
+        android:title="IV overlay window duration" />
+
+
+</PreferenceScreen>

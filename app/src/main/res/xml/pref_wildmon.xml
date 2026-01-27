@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preferences_additional_general_header">
+        <Preference
+            android:id="@+id/pref_mon_info"
+            android:background="#FFC7C7"
+            android:clickable="false"
+            android:icon="@drawable/ic_mad_logo_round"
+            android:key="pref_mon_info"
+            android:singleLine="false"
+            android:summary="All these settings could be changed while pogo is open"
+            android:title="Live Settings" />
+        <SwitchPreference
+            android:id="@+id/increase_visibility"
+            android:key="increase_visibility"
+            android:summary="increase mon visibility."
+            android:title="Increase visibility" />
+        <SwitchPreference
+            android:id="@+id/disable_grunts"
+            android:key="disable_grunts"
+            android:summary="Autofight all grunts on pokestops."
+            android:title="Autofight grunts" />
+
+        <SwitchPreference
+            android:id="@+id/hide_mon_on_map"
+            android:key="hide_mon_on_map"
+            android:summary="Hide selected (id / type) on ingame map too"
+            android:title="" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Hide nearby / on Map">
+
+        <Preference
+            android:key="pref_nearby_hide_all"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Temporarily select all mons to be hidden. You need to press OK to store the settings!"
+            android:title="Select all to be hidden" />
+        <Preference
+            android:key="pref_nearby_unhide_all"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Temporarily de-select all mons to be hidden. You need to press OK to store the settings!"
+            android:title="De-select all to be hidden" />
+
+        <com.mad.pogoenhancer.MonIdPreferenceListPicker
+            android:defaultValue="@array/pref_nearby_hide_ids"
+            android:key="mon_hide_ids_nearby"
+            android:summary="Select mon IDs to be hidden from the nearby list and on map altogether"
+            android:title="Mon IDs to be hidden from the nearby list" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Show ...">
+
+        <SwitchPreference
+            android:id="@+id/type_1"
+            android:key="type_1"
+            android:defaultValue="true"
+            android:title="... NORMAL type mon (⦿)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_2"
+            android:key="type_2"
+            android:defaultValue="true"
+            android:title="... FIGHTING type mon (仝)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_3"
+            android:key="type_3"
+            android:defaultValue="true"
+            android:title="... FLYING type mon (ত)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_4"
+            android:key="type_4"
+            android:defaultValue="true"
+            android:title="... POISON type mon (৶)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_5"
+            android:key="type_5"
+            android:defaultValue="true"
+            android:title="... GROUND type mon (⏚)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_6"
+            android:key="type_6"
+            android:defaultValue="true"
+            android:title="... ROCK type mon (ᨏ)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_7"
+            android:key="type_7"
+            android:defaultValue="true"
+            android:title="... BUG type mon (४)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_8"
+            android:key="type_8"
+            android:defaultValue="true"
+            android:title="... GHOST type mon (९)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_9"
+            android:key="type_9"
+            android:defaultValue="true"
+            android:title="... STEEL type mon (◎)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_10"
+            android:key="type_10"
+            android:defaultValue="true"
+            android:title="... FIRE type mon (ঌ)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_11"
+            android:key="type_11"
+            android:defaultValue="true"
+            android:title="... WATER type mon (〜)"
+            />
+        <SwitchPreference
+            android:id="@+id/type_12"
+            android:key="type_12"
+            android:defaultValue="true"
+            android:title="... GRASS type mon (∭)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_13"
+            android:key="type_13"
+            android:defaultValue="true"
+            android:title="... ELECTRIC type mon (ᔪ)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_14"
+            android:key="type_14"
+            android:defaultValue="true"
+            android:title="... PSYCHIC type mon (७)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_15"
+            android:key="type_15"
+            android:defaultValue="true"
+            android:title="... ICE type mon (❀)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_16"
+            android:key="type_16"
+            android:defaultValue="true"
+            android:title="... DRAGON type mon (ઙ)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_17"
+            android:key="type_17"
+            android:defaultValue="true"
+            android:title="... DARK type mon (◐)"
+            />
+
+        <SwitchPreference
+            android:id="@+id/type_18"
+            android:key="type_18"
+            android:defaultValue="true"
+            android:title="... FAIRY type mon (꩓)"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,14 @@
+//
+//
+//
+
+#ifndef DROID_ENHANCEDTHROWTYPE_H
+#define DROID_ENHANCEDTHROWTYPE_H
+
+enum EnhancedThrowType {
+    EXCELLENT = 2,
+    RANDOMIZED_GREAT_EXCELLENT = 1,
+    DISABLED = 0
+};
+
+#endif //DROID_ENHANCEDTHROWTYPE_H

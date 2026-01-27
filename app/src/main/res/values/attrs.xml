@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InjectionSettingSwitch">
+        <attr name="preference_key" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="InjectionSettingCheckbox">
+        <attr name="show_values" format="boolean"/>
+    </declare-styleable>
+
+<declare-styleable name="MapSettingSwitch">
+    <attr name="map_preference_key" format="string"/>
+</declare-styleable>
+</resources>

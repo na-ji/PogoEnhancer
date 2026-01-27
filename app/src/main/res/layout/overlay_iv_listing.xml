@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/overlay_iv_listing"
+    >
+
+    <LinearLayout
+        android:id="@+id/show_hide_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/iv_list_show_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_zoom_in_white_24dp"
+            />
+
+        <TextView
+            android:id="@+id/overlay_iv_listing_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IV"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hidable_content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_hide_button"
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_layout_stamina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.mad.pogoenhancer.ui.misc.AutoResizeTextView
+                android:id="@+id/stamina_title"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Stamina"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/stamina_value"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_defence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout_stamina">
+
+            <TextView
+                android:id="@+id/defence_title"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Defence"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/defence_value"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_attack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout_defence">
+
+            <TextView
+                android:id="@+id/attack_title"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Attack"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/attack_value"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout_attack">
+
+            <TextView
+                android:id="@+id/iv_percentage_title"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="IV %"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/iv_percentage_value"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_layout_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/linear_layout_iv">
+
+            <TextView
+                android:id="@+id/pokemon_level_title"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Level"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+
+            <TextView
+                android:id="@+id/pokemon_level_value"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_gym_item_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="#ffffff"
+    android:foregroundGravity="top">
+
+    <ImageView
+        android:id="@+id/gym_color"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_weight="0"
+        android:src="@color/white" />
+
+    <TextView
+        android:id="@+id/free_slots"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:text="0"
+        android:textColor="@android:color/black"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="5sp"
+        app:autoSizeStepGranularity="1sp"
+        />
+
+    <TextView
+        android:id="@+id/raid_level"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@android:color/black"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="5sp"
+        app:autoSizeStepGranularity="1sp"
+        />
+
+    <ImageView
+        android:id="@+id/raid_mon_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_weight="2"
+        android:src="@color/white" />
+
+    <TextView
+        android:id="@+id/hatch_at"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@android:color/black"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="5sp"
+        app:autoSizeStepGranularity="1sp"
+        />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="right"
+        android:text="0 m"
+        android:textColor="@android:color/black"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="5sp"
+        app:autoSizeStepGranularity="1sp"
+        />
+</LinearLayout>

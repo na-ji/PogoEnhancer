@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gpx_manager_listing_item"
+    android:layout_height="20dp"
+    android:layout_width="match_parent"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_gravity="center"
+    android:background="#00000000">
+
+    <ImageView
+        android:id="@+id/gpx_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:background="#00000000"
+        android:padding="2dp"
+        app:srcCompat="@drawable/ic_route"/>
+
+    <TextView
+        android:id="@+id/gpx_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:background="#00000000"
+        android:padding="2dp"
+        android:text="-"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/gpx_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:background="#00000000"
+        app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+</LinearLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preferences_additional_general_header">
+
+        <ListPreference
+            android:id="@+id/enhanced_capture"
+            android:entries="@array/enhanced_capture_methods"
+            android:entryValues="@array/enhanced_capture_methods"
+            android:key="enhanced_capture"
+            android:title="Enhance throws" />
+
+        <ListPreference
+            android:id="@+id/fast_catch"
+            android:entries="@array/fast_catch_options"
+            android:entryValues="@array/fast_catch_options"
+            android:key="fast_catch_option"
+            android:title="Speedup animations having hit a mon." />
+
+        <ListPreference
+            android:id="@+id/easy_catch"
+            android:entries="@array/easy_catch_options"
+            android:entryValues="@array/easy_catch_options"
+            android:key="easy_catch_option"
+            android:summary="Pacifist: Mons do not attack, Immobilized being immobilized."
+            android:title="Stun Mon" />
+
+        <SwitchPreference
+            android:id="@+id/autospin"
+            android:key="enable_autospin"
+            android:summary="Is your thumb swollen from swiping yet?"
+            android:title="Spin stops" />
+
+        <SwitchPreference
+            android:id="@+id/unlock_fps"
+            android:key="unlock_fps"
+            android:summary="Unlock the FPS limit"
+            android:title="FPS unlock" />
+
+        <SwitchPreference
+            android:id="@+id/skip_evolve_animation"
+            android:key="skip_evolve_animation"
+            android:summary="Skip evolve/egg hatch/purify animations"
+            android:title="Skips animations" />
+
+        <SwitchPreference
+            android:id="@+id/speedup_gift_opening"
+            android:key="speedup_gift_opening"
+            android:summary="Speed up the opening of gifts. Only works if injection occurred before opening the profile."
+            android:title="Speed up opening gifts" />
+
+        <SwitchPreference
+            android:id="@+id/masstransfer"
+            android:key="masstranser"
+            android:summary="Unlock transferring/releasing of shiny/event/legendary mons for multi select."
+            android:title="Unlock transfers" />
+
+        <SwitchPreference
+            android:id="@+id/keep_enc_ui"
+            android:key="keep_enc_ui"
+            android:summary="If enabled, the encounter UI will not disappear (e.g. flee button)."
+            android:title="Keep encounter UI" />
+
+        <SwitchPreference
+            android:id="@+id/save_last_used_ball"
+            android:key="save_last_used_ball"
+            android:summary="If enabled, the pokeball last used will be saved."
+            android:title="Save last used ball" />
+
+        <SwitchPreference
+            android:id="@+id/pinap_mode"
+            android:key="pinap_mode"
+            android:summary="If enabled, every mon will be fed automatically (with pineapple)"
+            android:title="Pinap Mode" />
+
+        <SwitchPreference
+            android:id="@+id/use_nanny"
+            android:key="use_nanny"
+            android:summary="If enabled, a nanny will care about your buddy."
+            android:title="Activate nanny" />
+
+        <!-- <SwitchPreference
+            android:id="@+id/skip_encounter_intro"
+            android:key="skip_encounter_intro"
+            android:summary="Speed up the camera when entering an encounter"
+            android:title="Skip encounter intro" />-->
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_additional_autorun_header">
+
+        <SwitchPreference
+            android:id="@+id/autorun"
+            android:key="enable_autorun"
+            android:summary="Do you only want to encounter shinies/dittos or decent mons? Show an error if the criteria is not met. Enabling will always encounter shinies/dittos as well as mons with the min IV specified."
+            android:title="Enable Autorun" />
+
+        <ListPreference
+            android:id="@+id/autorun_min_iv"
+            android:entries="@array/autorun_min_iv_options"
+            android:entryValues="@array/autorun_min_iv_options"
+            android:key="autorun_min_iv"
+            android:summary="Do not encounter any mon below this IV. 101: Shiny only. 102: Shiny, 100%%, 0%%"
+            android:title="Autorun min IV" />
+
+        <com.mad.pogoenhancer.MonIdPreferenceListPicker
+            android:defaultValue="@array/pref_not_autrun_ids"
+            android:key="mon_not_run_ids"
+            android:summary="Select mons that be ignored from autorun feature"
+            android:title="Ignore Mon IDs" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Autoencounter">
+    <SwitchPreference
+        android:id="@+id/autoencounter"
+        android:key="enable_autotransfer"
+        android:summary="Encounter nearby mon automatically"
+        android:title="Enable Autoencounter" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Autotransfer">
+        <Preference
+            android:id="@+id/pref_autotransfer_info"
+            android:background="#FFC7C7"
+            android:clickable="false"
+            android:key="pref_autotransfer_info"
+            android:singleLine="false"
+            android:summary="Mons will be transfered automatically after you caught them. Following mons will be ignored from this feature: Shiny/Ditto/Raid/Shadow-Mons and mons matching the IV values from autorun feature. You also could define a list of mons that always will be ignored too."
+            android:title="Autotransfer Settings" />
+
+        <SwitchPreference
+            android:id="@+id/autotransfer"
+            android:key="enable_autotransfer"
+            android:summary="Transfer trash mon automatically"
+            android:title="Enable Autotransfer" />
+
+        <SwitchPreference
+            android:id="@+id/autotransfer_switch_not_transfer"
+            android:key="autotransfer_switch_not_transfer"
+            android:summary="If enabled, all selected mons from following list will be transferred. All others will be kept in box. Otherwise selected will be kept."
+            android:title="Mon handling" />
+
+        <com.mad.pogoenhancer.MonIdPreferenceListPicker
+            android:defaultValue="@array/pref_not_transfered_ids"
+            android:key="mon_not_transfered_ids"
+            android:summary="Select mons that will be handled"
+            android:title="Mon IDs" />
+
+        <Preference
+            android:key="pref_not_transfered_unhide_all"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="De-select all mons. You need to press OK to store the settings!"
+            android:title="De-select all not to be transferred" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Nearby">
+
+    <SwitchPreference
+        android:id="@+id/overlay_nearby_non_spoofing_click_copy"
+        android:defaultValue="false"
+        android:key="overlay_nearby_non_spoofing_click_copy"
+        android:summary="If enabled, the coordinates of the nearby mon will be copied to clipboard right away instead of opening a dialog to open GMaps"
+        android:title="Copy nearby coords to clipboard" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Alert nearby">
+
+        <Preference
+            android:key="pref_nearby_notify_all"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Temporarily select all mons to be notified. You need to press OK to store the settings!"
+            android:title="Select all to be notified" />
+        <Preference
+            android:key="pref_nearby_remove_notify_all"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="Temporarily de-select all mons to be notified about. You need to press OK to store the settings!"
+            android:title="De-select all to be notified" />
+        <com.mad.pogoenhancer.MonIdPreferenceListPicker
+            android:defaultValue="@array/pref_nearby_notify_ids"
+            android:key="mon_notification_ids_nearby"
+            android:summary="Select mon IDs to be notified about and that are to be highlighted"
+            android:title="Mon IDs to be notified about" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory android:title="Teleport options">
+
+		<ListPreference
+		            android:id="@+id/teleport_default_option"
+		            android:key="teleport_default_option"
+		            android:title="Default Teleport option"
+		            android:entries="@array/teleport_default_option"
+		            android:entryValues="@array/teleport_default_option"/>
+        
+    </PreferenceCategory>
+</PreferenceScreen>

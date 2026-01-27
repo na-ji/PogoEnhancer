@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.library'
+}
+
+static def createRandomizedDictonaries() {
+    def file = new File("windows.txt")
+    def lines = file.readLines()
+    100.times {
+        Collections.shuffle(lines)
+    }
+    System.out.println("Printing read lines: " + lines.toString())
+    file.withWriter { out ->
+        lines.each {
+            out.println it
+        }
+    }
+    return lines.size()
+}
+
+
+
+android {
+    namespace 'eu.maddev.shared'
+    createRandomizedDictonaries()
+    compileSdk 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdk 28
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            //Enable the proguard
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "proguard-rules.pro"
+            shrinkResources false
+            //Other parameters
+            jniDebuggable false
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "proguard-rules.pro"
+            shrinkResources false
+            //Other parameters
+            jniDebuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    def libsuVersion = '2.5.1'
+    implementation "com.github.topjohnwu.libsu:core:${libsuVersion}"
+    implementation "com.github.topjohnwu.libsu:io:${libsuVersion}"
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+}

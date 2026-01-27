@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/overlay_gym_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/description_free_slots"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Slots"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/description_raid_level"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Lvl"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/description_raid_mon_icon"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Mon"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/description_distance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Dist"
+            android:textColor="@android:color/white"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:id="@+id/gym_recycler_view"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp">
+            <ImageView
+                android:id="@+id/fraction_red"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/colorRedVersionMismatch" />
+            <ImageView
+                android:id="@+id/fraction_red_check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_check_24_black"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp">
+            <ImageView
+                android:id="@+id/fraction_blue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/blue" />
+            <ImageView
+                android:id="@+id/fraction_blue_check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_check_24_black"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp">
+            <ImageView
+                android:id="@+id/fraction_yellow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/yellow" />
+            <ImageView
+                android:id="@+id/fraction_yellow_check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_check_24_black"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp">
+            <ImageView
+                android:id="@+id/fraction_white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/white" />
+            <ImageView
+                android:id="@+id/fraction_white_check"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_check_24_black"
+                />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/raid_level_filter_none"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="2dp"
+            android:background="@color/colorRedVersionMismatch"
+            android:text="None"
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/raid_level_filter_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="2dp"
+            android:background="@color/colorRedVersionMismatch"
+            android:text="1"
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/raid_level_filter_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="2dp"
+            android:background="@color/colorRedVersionMismatch"
+            android:text="2"
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/raid_level_filter_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="2dp"
+            android:background="@color/colorRedVersionMismatch"
+            android:text="3"
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/raid_level_filter_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="2dp"
+            android:background="@color/colorRedVersionMismatch"
+            android:text="4"
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+
+        <TextView
+            android:id="@+id/raid_level_filter_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="2dp"
+            android:background="@color/colorRedVersionMismatch"
+            android:text="5+"
+            android:textColor="@android:color/black"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="5sp"
+            app:autoSizeStepGranularity="1sp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+//
+//
+//
+
+#ifndef DROID_PLUSPLUS_FASTCATCHTYPE_H
+#define DROID_PLUSPLUS_FASTCATCHTYPE_H
+
+enum FastCatchType {
+    DISABLED_FAST_CATCH,
+    SPEEDUP,
+    Quick
+};
+
+#endif //DROID_PLUSPLUS_FASTCATCHTYPE_H

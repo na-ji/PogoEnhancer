@@ -1,0 +1,8 @@
+function isRemappingEnabledForClass(node) {
+    var flag1 = !node.name.startsWith("com/mad/pogoenhancer/gpx/LoadedGpxRoutes");
+    return flag1;
+}
+function isObfuscatorEnabledForClass(node) {
+    var flag1 = !node.name.startsWith("com/mad/pogoenhancer/gpx/LoadedGpxRoutes");
+    return flag1;
+}

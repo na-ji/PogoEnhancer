@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/overlay_incident_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxWidth="300dp"
+    android:paddingEnd="5dp"
+    android:paddingStart="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textview_enhancer_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:elegantTextHeight="true"
+            android:gravity="center|start"
+            android:paddingRight="5dp"
+            android:text="Enhancer Settings"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textDirection="ltr"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/replace_encounter_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Replace encounter names"
+            app:preference_key="replace_encounter_name"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/replace_cp_with_iv_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Replace inventory names (disable requires pogo restart)"
+            app:preference_key="replace_cp_with_iv_percentage"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/disable_grunts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autofight grunts"
+            app:preference_key="disable_grunts"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/increase_visibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Increase mon visibility"
+            app:preference_key="increase_visibility"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/enable_autorun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable autorun"
+            app:preference_key="enable_autorun"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingList
+            android:id="@+id/autorun_min_iv"
+            android:entries="@array/autorun_min_iv_options"
+            android:entryValues="@array/autorun_min_iv_options"
+            android:key="autorun_min_iv"
+            android:text="-> Set autorun min IV"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:paddingTop="2dp"
+            android:paddingBottom="5dp">
+        </com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingList>
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/masstransfer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable masstransfer"
+            app:preference_key="masstransfer"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/keep_enc_ui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Always show UI in encounters"
+            app:preference_key="keep_enc_ui"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/autospin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable autospin"
+            app:preference_key="enable_autospin"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/save_last_used_ball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save ball"
+            app:preference_key="save_last_used_ball"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/pinap_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autofeed (Pinap Berry)"
+            app:preference_key="pinap_mode"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/use_nanny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nanny"
+            app:preference_key="use_nanny"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
+
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/enable_autotransfer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable autotransfer"
+            app:preference_key="enable_autotransfer"
+            android:textColor="#FF0000"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:paddingTop="20sp"
+            android:paddingBottom="10sp"
+            />
+        <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+            android:id="@+id/enable_autoencounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable autoencounter"
+            app:preference_key="enable_autoencounter"
+            android:textColor="#FF0000"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:paddingTop="5sp"
+            android:paddingBottom="10sp"
+            />
+
+
+        <!--
+
+                <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+                    android:id="@+id/enable_peplus_autospin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20sp"
+                    android:paddingBottom="7sp"
+                    android:text="PEplus autospin"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:preference_key="enable_peplus_autospin" />
+                <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+                    android:id="@+id/enable_peplus_autocatch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PEplus autocatch"
+                    app:preference_key="enable_peplus_autocatch"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:paddingTop="7sp"
+                    android:paddingBottom="7sp"
+                    android:textStyle="bold"
+                    />
+                <com.mad.pogoenhancer.overlay.elements.injectionSettings.InjectionSettingSwitch
+                    android:id="@+id/enable_peplus_autofeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PEplus autofeed (Razzberry)"
+                    app:preference_key="enable_peplus_autofeed"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:paddingTop="5sp"
+                    android:paddingBottom="7sp"
+                    android:textStyle="bold"
+
+                    />
+        -->
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>

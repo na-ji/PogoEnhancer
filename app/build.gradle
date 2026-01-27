@@ -1,0 +1,244 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.protobuf'
+}
+
+// Define a method
+static def createRandomizedDictonaries() {
+    def file = new File("windows.txt")
+    def lines = file.readLines()
+    100.times {
+        Collections.shuffle(lines)
+    }
+    System.out.println("Printing read lines: " + lines.toString())
+    file.withWriter { out ->
+        lines.each {
+            out.println it
+        }
+    }
+    return lines.size()
+}
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('..../mad.jks')
+            storePassword '...'
+            keyAlias '...'
+            keyPassword '...'
+        }
+        release {
+            file("../signing.properties").with { propFile ->
+                if (propFile.canRead()) {
+                    def properties = new Properties()
+                    properties.load(new FileInputStream(propFile))
+
+                    storeFile file(properties['keystorePath'])
+                    storePassword properties['keystorePassword']
+                    keyAlias properties['keyAlias']
+                    keyPassword properties['keyPassword']
+                } else {
+                    println 'Unable to read signing.properties'
+                }
+            }
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+
+
+    createRandomizedDictonaries()
+    if (project.hasProperty("release")) {
+        ndkVersion '25.0.0'
+    } else {
+        ndkVersion '23.1.7779620'
+    }
+    compileSdk 28
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.mad.pogoenhancer"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 2
+        if (project.hasProperty("release") && project.hasProperty("version_id_patch") && project.hasProperty("version_id_minor")) {
+            println("Using parameters for versionName to be used.")
+            versionName = "31." + project.property("version_id_minor") + "." + project.property("version_id_patch")
+            println("VersionName to be used: " + versionName)
+        } else if (project.hasProperty("release") && (!project.hasProperty("version_id_patch") || !project.hasProperty("version_id_minor"))) {
+            println("Release set but no versions set")
+            throw new IllegalArgumentException("Release set but no versions set")
+        } else {
+            println("Using hardcoded versionName")
+            versionName "31.59.0"
+        }
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-DHAVE_PTHREAD -D__ANDROID__ -fPIC -std=c++17 "
+                if (project.hasProperty("release")) {
+                    cppFlags.add(
+                         /*   "-mllvm -bcf_createfunc " +
+                                    "-mllvm -enable-acdobf " +
+                                    "-mllvm -enable-funcwra " +
+                                    "-mllvm -fw_prob=60 " +
+                                    "-mllvm -fw_times=2 " +
+                                    "-mllvm -enable-fco " +
+                                    "-mllvm -indibran-use-stack " +
+                                    "-mllvm -indibran-enc-jump-target " +
+                                    "-mllvm -acd-rename-methodimp " +
+                                    "-mllvm -enable-strcry " +
+                                    "-mllvm -bcf_junkasm " +
+                                    "-mllvm -enable-cffobf " +
+                                    "-mllvm -enable-subobf " +*/
+                                    "-DCMAKE_BUILD_TYPE=Release ")
+                }
+            }
+        }
+        multiDexEnabled true
+        signingConfig signingConfigs.debug
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            //Enable the proguard
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "proguard-rules.pro"
+            shrinkResources false
+            //Other parameters
+            debuggable false
+            jniDebuggable false
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), "proguard-rules.pro"
+            shrinkResources false
+            //Other parameters
+            debuggable true
+            jniDebuggable true
+            ndk {
+                abiFilters "armeabi-v7a", "arm64-v8a"
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.18.1'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    tasks.register("androidObfuscateCodeRelease") {
+        dependsOn 'compileReleaseJavaWithJavac'
+        doLast {
+            exec {
+                System.out.println("Obfuscating Java .class files (release)...\n")
+                System.out.println(System.getProperty("user.dir"))
+                // USE CORETTO JDK 11!
+                executable "java"
+                args = [
+                        "-jar",
+                        "obfuscator.jar",
+                        "-pathIn",
+                        "build/intermediates/javac/release/classes/com/mad/",
+                        "-pathOut",
+                        "build/intermediates/javac/release/classes/com/mad/"
+                ]
+            }
+        }
+    }
+
+    tasks.all { task ->
+        System.out.println(task.name)
+        if (task.name == 'minifyReleaseWithR8') {
+            task.dependsOn 'androidObfuscateCodeRelease'
+            task.mustRunAfter 'androidObfuscateCodeRelease'
+        } else if (task.name == "compileReleaseJavaWithJavac") {
+            androidObfuscateCodeRelease.dependsOn task
+        }
+    }
+
+    splits {
+        abi {
+            enable false
+            reset()
+            include 'armeabi-v7a', "arm64-v8a"
+            universalApk true
+        }
+    }
+    namespace 'com.mad.pogoenhancer'
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        ignoreWarnings true
+    }
+
+    tasks.whenTaskAdded { currentTask ->
+        //Android Gradle plugin may change this task name in the future
+        def prefix = 'transformClassesAndResourcesWithR8For'
+        if (currentTask.name.startsWith(prefix)) {
+            def taskName = currentTask.name.replace(prefix,
+                    'createProguardDictionariesFor')
+            task "$taskName" {
+                doLast {
+                    createRandomizedDictonaries()
+                }
+            }
+
+            //append scramble task to proguard task
+            currentTask.dependsOn "$taskName"
+        }
+    }
+}
+apply plugin: "com.google.osdetector"
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '.so', '*.aar'], dir: 'libs')
+    implementation 'org.conscrypt:conscrypt-openjdk:2.1.0:' + osdetector.classifier
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.google.protobuf:protobuf-java:3.23.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.github.recruit-lifestyle:FloatingView:2.4.4'
+    def libsuVersion = '2.5.1'
+    implementation "com.github.topjohnwu.libsu:core:${libsuVersion}"
+
+    /* Optional: For using com.topjohnwu.superuser.io classes */
+    implementation "com.github.topjohnwu.libsu:io:${libsuVersion}"
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+    implementation 'net.dongliu:apk-parser:2.6.10'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-runtime:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'joda-time:joda-time:2.12.5'
+
+    implementation project(path: ':shared')
+}

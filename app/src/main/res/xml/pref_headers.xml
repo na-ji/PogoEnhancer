@@ -1,0 +1,48 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$OverlayPreferenceFragment"
+        android:icon="@drawable/ic_wifi_black_24dp"
+        android:title="@string/pref_header_overlay" />
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$AppPreferenceFragment"
+        android:icon="@drawable/ic_wifi_black_24dp"
+        android:title="@string/pref_header_app" />
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$LocationPreferenceFragment"
+        android:icon="@drawable/ic_location_on_black_24dp"
+        android:title="@string/pref_header_location" />
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$AdditionalPreferenceFragment"
+        android:icon="@drawable/ic_location_on_black_24dp"
+        android:title="@string/pref_header_additional" />
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$InventoryCleanFragment"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/inventory_cleaner" />
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$NameReplaceFragment"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/iv_replace" />
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$WildmonFragment"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="@string/wildmon" />
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$LibrariesUsedFragment"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="Libraries used" />
+
+    <header
+        android:fragment="com.mad.pogoenhancer.SettingsActivity$SupportPreferenceFragment"
+        android:icon="@drawable/ic_info_black_24dp"
+        android:title="Support" />
+</preference-headers>

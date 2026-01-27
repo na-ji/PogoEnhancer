@@ -1,0 +1,96 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <!--suppress AndroidDomInspection -->
+    <PreferenceCategory android:title="General">
+
+
+        <Preference android:title="Repackage"
+            android:key="@string/repackage_button"
+            android:summary="Repackage App with random name to hide itself."/>
+
+        <Preference android:title="Export settings"
+            android:key="@string/export_settings_button"
+            android:summary="Export settings to /storage/emulated/0/download/pogosettings_pogoenhancer.pgdr"/>
+
+        <EditTextPreference
+            android:defaultValue="120"
+            android:key="preference_inject_after_seconds"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Injection delay"
+            android:summary="Time in seconds to wait after a Pogo start to inject into the process. Default: 120s, min 30s. If set to 0, injection will be disabled."
+            />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="toggle_injection_detection"
+            android:summary="If you experience issues with injections/freezes/crashes, try this toggle which toggles the detection method used."
+            android:title="Injection detection" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="switch_setenforce"
+            android:summary="Patches very few rules of SELinux. Required if you do not see any data (IV, nearby list) in the overlay (required especially for Samsung Stock Kernel for example. Tested on S10e)"
+            android:title="Patch SELinux" />
+        <SwitchPreference
+            android:key="full_daemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="Full daemon mode"
+            android:summary="Automatically start app on boot"
+            />
+        <EditTextPreference
+            android:defaultValue="0"
+            android:digits="0123456789"
+            android:inputType="numberDecimal"
+            android:key="boot_delay"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Start PogoEnhancer with a delay (seconds)" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Notifications">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_disable_notifications"
+            android:title="Disable notifications"
+            android:summary="Disable notifications of nearby mons."/>
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_popup_notifications"
+            android:title="Heads up notification"
+            android:summary="Enabling heads up notification will make the notifications pop up and display"/>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="Rooted">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_enable_oomadj"
+            android:title="Enable OOM override"
+            android:summary="Enables OOM adjustments to reduce the 'risk' of Android killing the app."
+            />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Mock location">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_enable_mock_location_patch"
+            android:summary="Make mock location providers useful (similar to smali patcher). If this causes soft-reboots, try smali please."
+            android:title="Mock location patching" />
+    </PreferenceCategory>
+
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+
+</PreferenceScreen>

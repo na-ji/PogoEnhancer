@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/start_listener_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="startAction"
+                    android:text="Start"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/stop_listener_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:onClick="stopAction"
+                    android:text="Stop" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/additional_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Keep in mind you have to wait for the 'Injection successful' message, otherwise you won't see IV etc." />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_device_id"
+                    android:layout_width="129dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Device ID:"
+                    android:textAlignment="viewEnd" />
+
+                <TextView
+                    android:id="@+id/text_device_id_insert"
+                    android:layout_width="184dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="28dp"
+                    android:textAlignment="viewStart" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_latest_version"
+                    android:layout_width="129dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Latest version:"
+                    android:textAlignment="viewEnd" />
+
+                <TextView
+                    android:id="@+id/text_latest_version_insert"
+                    android:layout_width="184dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="28dp"
+                    android:textAlignment="viewStart" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_current_version"
+                    android:layout_width="129dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Installed:"
+                    android:textAlignment="viewEnd" />
+
+                <TextView
+                    android:id="@+id/text_current_version_insert"
+                    android:layout_width="184dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="28dp"
+                    android:textAlignment="viewStart" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_pogo_version_installed"
+                    android:layout_width="129dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Version installed:"
+                    android:textAlignment="viewEnd" />
+
+                <TextView
+                    android:id="@+id/text_pogo_version_installed_insert"
+                    android:layout_width="184dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="28dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_current_pogo_supported"
+                    android:layout_width="129dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Version supported:"
+                    android:textAlignment="viewEnd" />
+
+
+                <TextView
+                    android:id="@+id/text_current_pogo_supported_insert"
+                    android:layout_width="184dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="28dp"
+                    android:textAlignment="viewStart" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/location_spoof_main_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                android:paddingTop="30dp">
+                <TextView
+                    android:id="@+id/additional_info_spoofing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="If you encounter issues with setting the location, try to delete Google Play Services data." />
+
+                <RadioGroup
+                    android:id="@+id/radio_group_location_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radio_button_last_location_used"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Use last used location" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_current_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Use current real location" />
+
+                    <RadioButton
+                        android:id="@+id/radio_button_new_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Use a custom location" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/custom_location_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="141dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Insert latitude and longitude to teleport to" />
+
+                    <EditText
+                        android:id="@+id/new_lat_lon_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="latitude, longitude"
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/button_set_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set location" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cooldown_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cooldown: " />
+
+                    <TextView
+                        android:id="@+id/cooldown_remaining_minutes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/cooldown_over_at"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

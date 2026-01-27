@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">PogoEnhancer</string>
+    <string name="pref_header_external_communication">External communication</string>
+    <string name="pref_post_destination_description">Destination to send data to</string>
+    <string name="pref_post_destination_title">POST destination</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_login">PogoEnhancer Sign in</string>
+    <!-- Strings related to login -->
+    <string name="prompt_token">Password</string>
+    <string name="prompt_user_id">User ID</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_token">This token is too short</string>
+    <string name="error_invalid_user_id">This user ID is invalid</string>
+    <string name="error_incorrect_token">This token is incorrect</string>
+    <string name="error_incorrect_user_id">This user ID is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_auth_too_many_devices">Failed logging in. Too many devices on one token.</string>
+    <string name="error_auth_unknown">Error: unknown token</string>
+    <string name="error_auth_missing_privileges">Failed logging in. You appear to not have privileges.</string>
+    <string name="error_auth_internal_error_malformed">Failed logging in. Internal error, malformed request.</string>
+    <string name="error_auth_failed_connect">Failed connecting to backend.</string>
+    <string name="error_auth_failed_retrieving_response">Failed retrieving response.</string>
+    <string name="error_auth_internal_error">Failed logging in. Internal error.</string>
+    <string name="login_get_key_button_patreon">Get/refresh token (Patreon)</string>
+    <string name="pref_header_overlay">Overlay settings</string>
+    <string name="hide_manager_toast">Repackaging App</string>
+    <string name="hide_manager_toast2">This may take some time. If the app closes without further notice, check your appdrawer for a \"new\" app.</string>
+    <string name="injection_dialog_title">Injecting....</string>
+    <string name="injection_dialog_text">Injecting. This will only take a few seconds</string>
+    <string name="pref_header_app">App</string>
+    <string name="repackage_button">repackage_button</string>
+    <string name="error_login_failed_getting_deviceid">Error: Failed retrieving ID. Requires root.</string>
+    <string name="export_settings_button">export_settings_button</string>
+    <string name="android_10_load_settings_button">android_10_load_settings_button</string>
+    <!-- Strings related to login -->
+    <string name="prompt_password">Password</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="prompt_email">User ID</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="pref_header_location">Location</string>
+    <string name="pref_title_reset_agps">Reset AGPS data continuously</string>
+    <string name="pref_summary_reset_agps">Resets the AGPS data with every location update</string>
+    <string name="pref_title_reset_agps_once">Reset AGPS once</string>
+    <string name="pref_summary_reset_agps_once">Resets AGPS once at startup of services</string>
+
+    <string name="pref_title_reset_google_play_services">Reset GMS data</string>
+    <string name="pref_summary_reset_google_play_services">Temporarily disabled, unclear if helpful.
+        Resets Google Play Services data.
+        This will STOP Google Play Services. Executed upon service start.
+        Any apps relying on GMS will need to be restarted.
+        May help against rubberbanding.
+    </string>
+    <string name="pref_header_additional">Additional Settings</string>
+    <string name="inventory_cleaner">Inventory management</string>
+    <string name="iv_replace">Encounter name</string>
+    <string name="wildmon">Map settings</string>
+    <string name="preferences_additional_general_header">General</string>
+    <string name="preferences_additional_nearby_header">Nearby settings</string>
+    <string name="preferences_additional_snipe_header">Global IV settings</string>
+    <string name="title_activity_main">PogoEnhancer</string>
+    <string name="error_auth_failed_unauthorized">Failed logging in. Wrong credentials?</string>
+    <string name="title_activity_main_view">PogoEnhancer</string>
+    <string name="title_activity_favourite_places">Favourite Places</string>
+    <string name="tab_text_1">Locations</string>
+    <string name="tab_text_2">GPX</string>
+    <string name="menu_home">Main</string>
+    <string name="menu_gpx">GPX</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_routes_locations">GPX / Locations</string>
+    <string name="preferences_additional_autorun_header">Autorun</string>
+    <string name="login_failed_internal_error_or_trial_end">Either there was an internal error OR you may just have tried to create yet another account with a trial only. In case of the latter: Consider the work put into getting this app to run</string>
+    <string name="settings_dialog_message">Set the overlay scaling</string>
+    <string name="settings_summary">The UI can be scaled up to a supported value. Currently, that is by a max factor of 2</string>
+    <string name="settings_unit">% scaling</string>
+    <string name="settings_title">Overlay scaling</string>
+</resources>

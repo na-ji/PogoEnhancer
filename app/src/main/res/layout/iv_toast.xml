@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/overlay_partials"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#90000000"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:contentPaddingBottom="2dp"
+    app:contentPaddingLeft="2dp"
+    app:contentPaddingRight="2dp"
+    app:contentPaddingTop="2dp">
+
+    <LinearLayout
+        android:id="@+id/overlay_iv_listing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/custom_toast_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/custom_toast_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elegantTextHeight="true"
+            android:gravity="center|start"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="100 IV \nA15 / D15 / S15"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textDirection="ltr"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <ImageView
+            android:id="@+id/toast_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:baselineAlignBottom="false"
+            app:srcCompat="@drawable/ic_shiny_white" />
+
+        <ImageView
+            android:id="@+id/toast_second_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:baselineAlignBottom="false"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:srcCompat="@drawable/ic_smog_solid" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

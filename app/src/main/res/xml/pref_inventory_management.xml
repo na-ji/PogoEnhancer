@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preferences_additional_general_header">
+
+        <SwitchPreference
+            android:id="@+id/activate_inventory_management"
+            android:key="activate_inventory_management"
+            android:summary="Automatically cleanup item inventory"
+            android:title="Cleanup inventory" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Balls">
+
+    <EditTextPreference
+        android:defaultValue="9999"
+        android:key="item_1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:inputType="numberDecimal"
+        android:digits="0123456789"
+        android:title="Poké Ball (#1)"
+        android:summary="Keep Poké Ball. Default: 9999."
+        />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_2"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Great Ball (#2)"
+            android:summary="Keep Great Ball. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_3"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Ultra Ball (#3)"
+            android:summary="Keep Ultra Ball. Default: 9999."
+            />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Potions">
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_101"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Potion (#101)"
+            android:summary="Keep Potion. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_102"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Super Potion (#102)"
+            android:summary="Keep Super Potion. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_103"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Hyper Potion (#103)"
+            android:summary="Keep Hyper Potion. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_104"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Max Potion (#104)"
+            android:summary="Keep Max Potion. Default: 9999."
+            />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Revives">
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_201"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Revive (#201)"
+            android:summary="Keep Revive. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_202"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Max Revive (#202)"
+            android:summary="Keep Max Revive. Default: 9999."
+            />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Berries">
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_701"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Razz Berry (#701)"
+            android:summary="Keep Razz Berry. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_703"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Nanab Berry (#703)"
+            android:summary="Keep Nanab Berry. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_705"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Pinap Berry (#705)"
+            android:summary="Keep Pinap Berry. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_706"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Golden Razz Berry (#706)"
+            android:summary="Keep Golden Razz Berry. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_708"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Silver Pinap Berry (#708)"
+            android:summary="Keep Silver Pinap Berry. Default: 9999."
+            />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Items">
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1101"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Sun Stone (#1101)"
+            android:summary="Keep Sun Stone. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1102"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Kings Rock (#1102)"
+            android:summary="Keep Kings Rock. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1103"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Metal Coat (#1103)"
+            android:summary="Keep Metal Coat. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1104"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Dragon Scale (#1104)"
+            android:summary="Keep Dragon Scale. Default: 9999."
+            />
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1105"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Up-Grade (#1105)"
+            android:summary="Keep Up-Grade. Default: 9999."
+            />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="!!DANGER!!">
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1201"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Fast TM (#1201)"
+            android:summary="Keep Fast TM. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1202"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Charged TM (#1202)"
+            android:summary="Keep Charged TM. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1301"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Rare Candy (#1301)"
+            android:summary="Keep Rare Candy. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_1404"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Star piece (#1404)"
+            android:summary="Keep Star piece. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_301"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Lucky Egg (#301)"
+            android:summary="Keep Lucky Egg. Default: 9999."
+            />
+
+        <EditTextPreference
+            android:defaultValue="9999"
+            android:key="item_401"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:inputType="numberDecimal"
+            android:digits="0123456789"
+            android:title="Incense (#401)"
+            android:summary="Keep Incense. Default: 9999."
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

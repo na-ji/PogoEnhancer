@@ -1,0 +1,76 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.13.2'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.9.1'
+        classpath 'com.google.gradle:osdetector-gradle-plugin:1.7.1'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task androidObfuscateCodeRelease(type: Exec) {
+    System.out.println("Obfuscating Java .class files (release)...\n")
+    executable "/usr/bin/java"
+    args = [
+            "-jar",
+            "app/obfuscator.jar",
+            "--scriptFile",
+            "app/obfuscator_scripts.txt",
+            "-pathIn",
+            "app/build/intermediates/javac/release/classes/com/mad/",
+            "-pathOut",
+            "app/build/intermediates/javac/release/classes/com/mad/"
+    ]
+
+}
+
+task androidObfuscateCodeDebug(type: Exec) {
+    System.out.println("Obfuscating Java .class files (debug)...\n")
+    executable "/usr/bin/java"
+    args = [
+            "-jar",
+            "app/obfuscator.jar",
+            "--scriptFile",
+            "app/obfuscator_scripts.txt",
+            "-pathIn",
+            "app/build/intermediates/javac/debug/classes/com/mad/",
+            "-pathOut",
+            "app/build/intermediates/javac/debug/classes/com/mad/",
+    ]
+
+}
+
+allprojects {
+    ext {
+        stringcare_version = '1.2'
+    }
+
+    repositories {
+        mavenCentral()
+        google()
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+
+    tasks.whenTaskAdded { task ->
+        //if (task.name == 'processReleaseResources') {
+        System.out.println("Adding task: " + task.name + "\n")
+        if (task.name == 'minifyReleaseWithProguard') {
+            task.mustRunAfter androidObfuscateCodeRelease
+            task.dependsOn androidObfuscateCodeRelease
+        } else if (task.name == 'compileReleaseJavaWithJavac') {
+            androidObfuscateCodeRelease.dependsOn task
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

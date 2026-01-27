@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/overlay_joystick"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxWidth="200dp"
+    android:maxHeight="200dp"
+    android:minWidth="30dp"
+    android:minHeight="30dp">
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView
+        android:id="@+id/joystick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:JV_backgroundColor="#960032"
+        custom:JV_borderColor="#000000"
+        custom:JV_borderWidth="1dp"
+        custom:JV_buttonColor="#FFFFFF"
+        custom:JV_buttonSizeRatio="20%"
+        custom:JV_fixedCenter="false"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="1.0"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.0"
+        custom:layout_goneMarginLeft="10dp" />
+
+    <Space
+        android:id="@+id/space_current_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toBottomOf="@+id/joystick"
+        custom:layout_constraintEnd_toEndOf="@+id/joystick"
+        custom:layout_constraintHorizontal_bias="0.25"
+        custom:layout_constraintStart_toStartOf="@+id/joystick"
+        custom:layout_constraintTop_toTopOf="@+id/joystick"
+        custom:layout_constraintVertical_bias="0.00" />
+
+    <TextView
+        android:id="@+id/current_speed_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:minWidth="60dp"
+        android:text="0 km/h"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/space_current_speed" />
+
+    <Space
+        android:id="@+id/space_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toBottomOf="@+id/joystick"
+        custom:layout_constraintEnd_toEndOf="@+id/joystick"
+        custom:layout_constraintHorizontal_bias="0.0"
+        custom:layout_constraintStart_toStartOf="@+id/joystick"
+        custom:layout_constraintTop_toTopOf="@+id/joystick"
+        custom:layout_constraintVertical_bias="0.90" />
+
+    <TextView
+        android:id="@+id/current_location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current location..."
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toEndOf="@+id/space_current_location"
+        custom:layout_constraintTop_toBottomOf="@+id/space_current_location" />
+
+
+    <Space
+        android:id="@+id/space_lock_centering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:layout_constraintBottom_toBottomOf="@+id/joystick"
+        custom:layout_constraintEnd_toEndOf="@+id/joystick"
+        custom:layout_constraintHorizontal_bias="0.10"
+        custom:layout_constraintStart_toStartOf="@+id/joystick"
+        custom:layout_constraintTop_toTopOf="@+id/joystick"
+        custom:layout_constraintVertical_bias="0.10" />
+    <ImageView
+        android:id="@+id/lock_centering"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_lock_white_24dp"
+        custom:layout_constraintEnd_toEndOf="@+id/space_lock_centering"
+        custom:layout_constraintStart_toEndOf="@+id/space_lock_centering"
+        custom:layout_constraintTop_toBottomOf="@+id/space_lock_centering"/>
+
+
+    <ImageView
+        android:id="@+id/stop_autowalk_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_stop_sign_black"
+        android:visibility="gone"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

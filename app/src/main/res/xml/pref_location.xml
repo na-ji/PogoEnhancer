@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:id="@+id/enable_spoofing"
+        android:key="enable_spoofing"
+        android:onClick="switchIvOverlayAction"
+        android:summary="Enable spoofing of location."
+        android:title="Spoof location" />
+
+    <ListPreference
+        android:id="@+id/spoofing_method"
+        android:defaultValue="Mock"
+        android:entries="@array/spoof_methods"
+        android:entryValues="@array/spoof_methods"
+        android:key="spoofing_method"
+        android:summary="Legacy: Requires system-privileges (using system-level APIs). Mocking (Recommended): Use mock providers (requires Smali-patch OR mock-patch found in App-settings tab of PogoEnhancer)."
+        android:title="Spoof method" />
+
+    <EditTextPreference
+        android:defaultValue="30"
+        android:key="spoof_walk_speed_kmph"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="Speed to be run at at the outmost border of the circle in km/h."
+        android:title="Speed of walking"
+        android:inputType="numberDecimal"
+        />
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="reset_agps_continuously"
+        android:title="@string/pref_title_reset_agps"
+        android:summary="@string/pref_summary_reset_agps" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="reset_agps_once"
+        android:title="@string/pref_title_reset_agps_once"
+        android:summary="@string/pref_summary_reset_agps_once" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="reset_google_play_services"
+        android:title="@string/pref_title_reset_google_play_services"
+        android:enabled="false"
+        android:summary="@string/pref_summary_reset_google_play_services" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="suspended_mocking"
+        android:title="Suspended mocking"
+        android:summary="May help against rubberbanding / location smoothing" />
+
+    <ListPreference
+        android:id="@+id/location_overwrite_method"
+        android:key="location_overwrite_method"
+        android:title="Overwrite method"
+        android:summary="Defines how many providers are overwritten (also known as indirect mocking). Minimal (only GPS), Common (GPS, Network), Overkill (GPS, Network, Passive - no effect on Android 10). Indirect mocking is recommended for Android 10 with latest GPlay Services!"
+        android:entries="@array/location_overwrite_method"
+        android:entryValues="@array/location_overwrite_method"/>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="overwrite_fused"
+        android:title="Overwrite fused"
+        android:summary="Also overwrite fused provider" />
+
+    <PreferenceCategory android:title="Recommended">
+        <Preference android:title="Android 10 and latest GPlay Services"
+            android:key="@string/android_10_load_settings_button"
+            android:summary="Loads recommended settings for Android 10 running latest google play services."/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="send_logcat"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="Send a zipped logcat to the developer for technical assistance."
+        android:title="Send log" />
+</PreferenceScreen>

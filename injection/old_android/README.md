@@ -1,0 +1,1 @@
+Based on bdec859aa69d53447f5665043a3a14b9031e01d4 for old android roms to work on ARM64 since latest frida versions somehow cause crashes

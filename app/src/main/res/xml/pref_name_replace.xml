@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preferences_additional_general_header">
+
+        <SwitchPreference
+            android:id="@+id/replace_cp_with_iv_percentage"
+            android:key="replace_cp_with_iv_percentage"
+            android:summary="Replace the name shown in inventory."
+            android:title="Replace inventory names" />
+
+        <SwitchPreference
+            android:id="@+id/replace_encounter_name"
+            android:key="replace_encounter_name"
+            android:summary="Show the IV instead of the mon name in encounters"
+            android:title="Replace encounter names" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Show ...">
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_name"
+            android:key="overlay_show_name"
+            android:defaultValue="false"
+            android:summary=""
+            android:title="... pokemon name" />
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_iv_percentage"
+            android:key="overlay_show_iv_percentage"
+            android:defaultValue="false"
+            android:title="... iv percentage"
+            android:summary="0% - 100%"/>
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_iv_values"
+            android:key="overlay_show_iv_values"
+            android:defaultValue="false"
+            android:summary="0/0/0 - 15/15/15"
+            android:title="... individual values (a/d/s)" />
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_lvl"
+            android:key="overlay_show_lvl"
+            android:defaultValue="false"
+            android:summary=""
+            android:title="... level" />
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_gender"
+            android:key="overlay_show_gender"
+            android:defaultValue="false"
+            android:summary="⚦, ♀, ⚤"
+            android:title="... gender" />
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_xsxl"
+            android:key="overlay_show_xsxl"
+            android:defaultValue="false"
+            android:summary="XS / XL"
+            android:title="... height/weight values" />
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_moveset"
+            android:key="overlay_show_moveset"
+            android:defaultValue="false"
+            android:summary="Bug(४) Dark(◐) Dragon(ઙ) Electric(ᔪ) Fairy(꩓) Fighting(仝) Fire(ঌ) Flying(ত) Ghost(९) Grass(∭) Ground(⏚) Ice(❀) Normal(⦿) Poison(৶) Psychic(७) Rock(ᨏ) Steel(◎) Water(〜)"
+            android:title="... moveset icons" />
+
+        <SwitchPreference
+            android:id="@+id/overlay_show_specialmon"
+            android:key="overlay_show_specialmon"
+            android:defaultValue="false"
+            android:summary="small rat (⁻⁻) / big carp (⁺⁺)"
+            android:title="... special mon" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

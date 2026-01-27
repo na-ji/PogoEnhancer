@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/overlay_cooldown"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxWidth="200dp"
+    android:orientation="horizontal"
+    android:paddingRight="5dp">
+
+    <ImageView
+        android:id="@+id/reset_cd_button"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/ic_clock" />
+
+    <TextView
+        android:id="@+id/cooldown_remaining_minutes"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:autoSizeTextType="uniform"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center|start"
+        android:layout_gravity="center"
+        android:elegantTextHeight="true"
+        android:text="100 IV \nA15 / D15 / S15"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textDirection="ltr"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/cooldown_over_at"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:autoSizeTextType="uniform"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center|start"
+        android:layout_gravity="center"
+        android:elegantTextHeight="true"
+        android:text="100 IV \nA15 / D15 / S15"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textDirection="ltr"
+        android:textAlignment="center" />
+</LinearLayout>
