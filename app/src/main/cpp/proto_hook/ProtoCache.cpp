@@ -113,16 +113,6 @@ void ProtoCache::startUpdateThread() {
     this->_threadStarted = true;
 }
 
-void ProtoCache::setTypecode(Userlevel code) {
-    if(this->typecode == -1) {
-        this->typecode = code;
-    }
-}
-
-Userlevel ProtoCache::getTypecode() {
-    return this->typecode;
-}
-
 void ProtoCache::setSymmKey(std::string key) {
     if(this->symmKey.empty()) {
         if(key.length() > 16) {

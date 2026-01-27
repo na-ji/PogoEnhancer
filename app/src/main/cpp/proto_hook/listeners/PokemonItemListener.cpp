@@ -18,7 +18,7 @@
 void PokemonItemListener::on_enter(Gum::AbstractInvocationContext *context) {
     Logger::debug("MonInventoryGui being called...");
     void *pokemonProto = context->get_nth_argument_ptr(2);
-    if(pokemonProto != nullptr && ProtoCache::instance().getTypecode() >= Userlevel::PREMIUM) {
+    if(pokemonProto != nullptr) {
         PokemonProto::sendIvData(pokemonProto);
     }
 }

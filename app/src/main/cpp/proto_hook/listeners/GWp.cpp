@@ -1239,7 +1239,6 @@ void GWp::placeSecondBatch() {
     void *sendSearchRpc = (gpointer) (baseAddr + hap->pIs_sSRo());
     ProtoCache::instance().setSendSearchRpc(sendSearchRpc);
 
-    //if (ProtoCache::instance().getTypecode() >= Userlevel::INTERNAL_DEV) {
         /**
      * CombatDirector Listener
      */

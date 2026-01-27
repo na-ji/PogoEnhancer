@@ -12,9 +12,8 @@ void UpdateStop::on_enter(Gum::AbstractInvocationContext *context) {
 }
 
 void UpdateStop::on_leave(Gum::AbstractInvocationContext *context) {
-    // TODO: only if privileged/setting set
     ProtoCache &protoCache = ProtoCache::instance();
-    if (InjectionSettings::instance().isSpin() && protoCache.getTypecode() >= Userlevel::INTERNAL_DEV) {
+    if (InjectionSettings::instance().isSpin()) {
         Stop::instance().spin(this->currentStop);
     }
 }

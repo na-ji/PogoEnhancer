@@ -26,11 +26,7 @@ void PoiItemSpinnerListener::on_leave(Gum::AbstractInvocationContext *context) {
 //        second = false;
 //    }
     ProtoCache &protoCache = ProtoCache::instance();
-    if(protoCache.getTypecode() == Userlevel::NONE
-       || protoCache.getTypecode() == Userlevel::FREE) {
-        Logger::pdebug("Insufficient rights");
-        return;
-    }
+
 //    } else if (InjectionSettings::instance().getScanmode() == Scanmode::NOTHING) {
 //        Logger::pdebug("No scanmode set");
 //        return;
