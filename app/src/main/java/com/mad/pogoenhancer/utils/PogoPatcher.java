@@ -762,6 +762,8 @@ public class PogoPatcher {
                         commands.add("supolicy --live \"allow " + pogoEnhancerContext + " " + pogoContext + " unix_stream_socket connectto\"");
                         //commands.add("supolicy --live \"allow untrusted_app untrusted_app unix_stream_socket connectto\"");
                         commands.add("supolicy --live \"attradd " + pogoContext + " mlstrustedsubject\"");
+                        commands.add("supolicy --live \"typeattribute " + pogoContext + " mlstrustedsubject\"");
+                        commands.add("supolicy --live \"allow " + pogoEnhancerContext + " zygote:unix_stream_socket getopt\"");
                         _shellHelper.runCommands(Runlevel.su, commands);
                         commands.clear();
 
