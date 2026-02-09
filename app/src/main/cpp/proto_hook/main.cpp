@@ -83,7 +83,7 @@ void proto_hook_main(const gchar *data, gboolean *stay_resident) {
     // Now wait for credentials to be passed by the Java code
     UnixSender::sendMessage(MESSAGE_TYPE::REQUEST_AUTH, "huehueduedurp", ProtoCache::instance().getSymmKey());
 
-    while (InjectionSettings::instance().getUserId().empty()) {
+    while (InjectionSettings::instance().getDeviceId().empty()) {
         std::this_thread::sleep_for(std::chrono::seconds(5));
         UnixSender::sendMessage(MESSAGE_TYPE::REQUEST_AUTH, "huehueduedurp", ProtoCache::instance().getSymmKey());
     }

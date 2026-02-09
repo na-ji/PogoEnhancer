@@ -19,6 +19,10 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
+import com.mad.pogoenhancer.utils.ShellHelper;
+
+import net.dongliu.apk.parser.Main;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -96,6 +100,7 @@ public class SplashPermissionsActivity extends Activity {
      * granted.
      */
     private TextView textView = null;
+    private ShellHelper _shellHelper = new ShellHelper();
 
     /*
      * ---------------------------------------------
@@ -119,7 +124,7 @@ public class SplashPermissionsActivity extends Activity {
      */
     @SuppressWarnings("rawtypes")
     public Class getNextActivityClass() {
-        return LoginActivity.class;
+        return MainActivity.class;
     }
 
     /**
@@ -257,6 +262,13 @@ public class SplashPermissionsActivity extends Activity {
      */
     @SuppressLint("SetTextI18n")
     private void checkPermissions() {
+        String _deviceId = _shellHelper.getDeviceId();
+        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(
+                getApplicationContext()
+        ).edit();
+        editor.putString(Constants.SHAREDPERFERENCES_KEYS.DEVICE_ID, _deviceId);
+        editor.apply();
+
         String[] ungrantedPermissions = requiredPermissionsStillNeeded();
         if (ungrantedPermissions.length == 0) {
             startNextActivity();

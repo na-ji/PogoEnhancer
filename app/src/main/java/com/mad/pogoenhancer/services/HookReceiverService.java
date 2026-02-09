@@ -741,6 +741,11 @@ public class HookReceiverService extends Service {
             } else {
                 Logger.warning("PogoEnhancerJ", "Auth successful, setting deviceID");
                 BackendStorage.getInstance().setDeviceId(_deviceId);
+                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(
+                        getApplicationContext()
+                ).edit();
+                editor.putString(Constants.SHAREDPERFERENCES_KEYS.DEVICE_ID, _deviceId);
+                editor.apply();
                 return true;
             }
         }

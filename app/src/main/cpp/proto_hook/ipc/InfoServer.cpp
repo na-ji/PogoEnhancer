@@ -157,7 +157,6 @@ bool InfoServer::startServer() {
 
             if (jsonContent.contains("credentials")) {
                 auto credentials = jsonContent.at("credentials");
-                InjectionSettings::instance().setUserId(credentials["userId"].get<string>());
                 InjectionSettings::instance().setDeviceId(credentials["deviceId"].get<string>());
                 InjectionSettings::instance().setSessionId(credentials["sessionId"].get<string>());
                 InjectionSettings::instance().setAuthHeaderContent(credentials["authHeader"].get<string>());

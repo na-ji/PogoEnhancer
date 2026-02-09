@@ -35,7 +35,7 @@ import java.util.Locale;
 
 public class HomeViewModel extends ViewModel {
     static {
-        System.loadLibrary("b");
+//        System.loadLibrary("b");
     }
 
     static {
@@ -53,7 +53,7 @@ public class HomeViewModel extends ViewModel {
     private MutableLiveData<String> _pogoVersionSupported;
     private MutableLiveData<String> _pogoVersionInstalled;
 
-    private native String latest();
+//    private String latest;
 
     public HomeViewModel() {
         _cooldownText = new MutableLiveData<>();
@@ -79,7 +79,7 @@ public class HomeViewModel extends ViewModel {
 
     LiveData<String> getLatestVersionText() {
         // TODO update latest version
-        this._latestVersion.setValue(latest());
+        this._latestVersion.setValue("31.59.0");
         return this._latestVersion;
     }
 

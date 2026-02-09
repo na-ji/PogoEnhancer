@@ -315,7 +315,6 @@ public class PogoPatcher {
         }
         JSONObject credentials = new JSONObject();
         String deviceIdEncoded = null;
-        String userIdEncoded = null;
         try {
             deviceIdEncoded = Constants.hexadecimal(deviceId.trim());
         } catch (UnsupportedEncodingException e) {
@@ -359,7 +358,6 @@ public class PogoPatcher {
             return;
         }
 
-        credentials.put("userId", userIdEncoded);
         credentials.put("deviceId", deviceIdEncoded);
         credentials.put("sessionId", "");
         credentials.put("authHeader", base64Topass);
@@ -562,9 +560,10 @@ public class PogoPatcher {
         }
 
         private boolean inject(int pid) throws InterruptedException {
-            String deviceId = this._sharedPreferences.getString(
-                    Constants.SHAREDPERFERENCES_KEYS.DEVICE_ID,
-                    Constants.DEFAULT_VALUES.DEFAULT_DEVICE_ID);
+//            String deviceId = this._sharedPreferences.getString(
+//                    Constants.SHAREDPERFERENCES_KEYS.DEVICE_ID,
+//                    Constants.DEFAULT_VALUES.DEFAULT_DEVICE_ID);
+            String deviceId = BackendStorage.getInstance().getDeviceId();
             if (deviceId == null || deviceId.isEmpty()) {
                 Logger.warning("PogoEnhancerJ", "Could not read deviceID");
                 return false;

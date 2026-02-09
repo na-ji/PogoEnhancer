@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle extras = getIntent().getExtras();
-        if (!checkAuthenticated(extras)) {
-            return;
-        }
+//        Bundle extras = getIntent().getExtras();
+//        if (!checkAuthenticated(extras)) {
+//            return;
+//        }
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
