@@ -68,7 +68,7 @@ bool UnixSender::sendMessage(MESSAGE_TYPE type, std::string input, std::string s
     if (toBeSent.empty()) {
         return false;
     }
-//    LOGD("Sending: %s", toBeSent.c_str());
+//    Logger::debug(std::string("Sending to ") + socketName.substr(0, 5).c_str() + std::string(": "));
 
     uint32_t lengthOfMessage = toBeSent.length();
     lengthOfMessage = htonl(lengthOfMessage);
@@ -90,32 +90,32 @@ bool UnixSender::sendMessage(MESSAGE_TYPE type, std::string input, std::string s
     strcpy(&addr.sun_path[1], socketName.substr(0, 5).c_str());
     len = offsetof(struct sockaddr_un, sun_path) + 1 + strlen(&addr.sun_path[1]);
 
-//    LOGD("In clientSocketThreadNative() : Before creating socket");
+//    Logger::debug("In clientSocketThreadNative() : Before creating socket");
     sk = socket(PF_LOCAL, SOCK_STREAM, 0);
     if (sk < 0) {
         err = errno;
-        Logger::debug("Could not open up Unix socket");
+        Logger::debug(std::string("Could not open up Unix socket") + strerror(errno));
         errno = err;
         return false;
     }
 
-//    LOGD("In clientSocketThreadNative() : Before connecting to Java LocalSocketServer");
+//    Logger::debug("In clientSocketThreadNative() : Before connecting to Java LocalSocketServer");
     if (connect(sk, (struct sockaddr *) &addr, len) < 0) {
         err = errno;
-        Logger::debug("Failed connecting to unix socket");
+        Logger::debug(std::string("Failed connecting to unix socket: ") + strerror(errno));
         close(sk);
         errno = err;
         return false;
     }
 
     const char* charPtr = toSend.c_str();
-    Logger::debug("Sending to app: " + toSend);
+//    Logger::debug("Sending to app of size " + std::to_string(toSend.length()) + ": " + toSend.c_str());
 
-//    LOGD("In clientSocketThreadNative() : Connecting to Java LocalSocketServer succeed");
+//    Logger::debug("In clientSocketThreadNative() : Connecting to Java LocalSocketServer succeed");
     int sent = sendall(sk, charPtr, reinterpret_cast<size_t>(toSend.length()));
-//    LOGD("In clientSocketThreadNative() : close(%d)", sk);
+//    Logger::debug("In clientSocketThreadNative() : close(" + std::to_string(sk) + ")");
 
     int result = close(sk);
-    //Logger::debug("Send close() returned " + std::to_string(result));
+//    Logger::debug("Send close() returned " + std::to_string(result));
     return sent == 0;
 }

@@ -17,10 +17,14 @@
 //using namespace nlohmann;
 
 void PokemonProto::sendIvData(void *pokemonProto) {
+    Logger::debug("Prepare to send IV data: " + ProtoCache::convertPointerToReadableString(pokemonProto));
+
     bool is_Egg = isEgg(pokemonProto);
     if (is_Egg) {
         return;
     }
+
+//    Logger::debug("is_Egg: " + std::to_string(is_Egg));
 
     float mon_height = height(pokemonProto);
     float mon_weight = weight(pokemonProto);
@@ -29,15 +33,15 @@ void PokemonProto::sendIvData(void *pokemonProto) {
     int individual_attack = attack(pokemonProto);
     int individual_defense = defence(pokemonProto);
     int individual_stamina = stamina(pokemonProto);
-    //Logger::debug("cp_multiplier:" + to_string(cp_multiplier));
-    //Logger::debug("additional_cp_multiplier:" + to_string(additional_cp_multiplier));
+//    Logger::debug("cp_multiplier:" + to_string(cp_multiplier));
+//    Logger::debug("additional_cp_multiplier:" + to_string(additional_cp_multiplier));
 
     void *gameMasterDataInstance = ProtoCache::instance().getGameMasterData();
     int32_t monLvl = 0;
     string weightXSXL;
     string heightXSXL;
 
-    //Logger::debug("Gamemaster instance: " + ProtoCache::convertPointerToReadableString(gameMasterDataInstance));
+//    Logger::debug("Gamemaster instance: " + ProtoCache::convertPointerToReadableString(gameMasterDataInstance));
     if (gameMasterDataInstance) {
 #if defined(__arm__)
         int (*getMonLevel)(void *, float);
@@ -61,11 +65,11 @@ void PokemonProto::sendIvData(void *pokemonProto) {
         float monStdHeight = dexHeight(monSett);
         float monStdWeight = dexWeight(monSett);
 
-        //Logger::debug("StdWeight:" + to_string(monStdWeight));
-        //Logger::debug("StdWHeight:" + to_string(monStdHeight));
+//        Logger::debug("StdWeight:" + to_string(monStdWeight));
+//        Logger::debug("StdWHeight:" + to_string(monStdHeight));
 
-        //Logger::debug("Weight:" + to_string(mon_weight));
-        //Logger::debug("Height:" + to_string(mon_height));
+//        Logger::debug("Weight:" + to_string(mon_weight));
+//        Logger::debug("Height:" + to_string(mon_height));
 
 
         float monHeightDiv = monStdHeight / 8;

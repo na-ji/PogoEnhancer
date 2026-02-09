@@ -183,6 +183,13 @@ struct  RepeatedField_UInt64 : public Il2CppObject
     UInt64ArrayIl2Cpp* ___array_1;
     int32_t ___count_2;
 
+    static RepeatedField_UInt64* create() {
+        RepeatedField_UInt64* myTest = (RepeatedField_UInt64 *)malloc(sizeof(RepeatedField_UInt64));
+        myTest->___array_1 = UInt64ArrayIl2Cpp::create(1);
+        myTest->___count_2 = 0;
+        return myTest;
+    }
+
     int32_t getCount() {
         return this->___count_2;
     }
@@ -327,8 +334,8 @@ struct System_String_o : public Il2CppObject {
     }
 
     System_String_o(size_t s) : length(s)
-            {
-            }
+    {
+    }
 
     void destroy()
     {

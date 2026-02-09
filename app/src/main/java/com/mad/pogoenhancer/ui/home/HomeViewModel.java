@@ -67,7 +67,7 @@ public class HomeViewModel extends ViewModel {
         _latestVersion.setValue("-");
 
         _pogoVersionSupported = new MutableLiveData<>();
-        _pogoVersionSupported.setValue("0.343.2");
+        _pogoVersionSupported.setValue("0.395.1");
 
         _pogoVersionInstalled = new MutableLiveData<>();
         // _pogoVersionInstalled.setValue(getPogoVersionInstalled());

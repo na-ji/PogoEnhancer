@@ -1,221 +1,333 @@
-//
-//
-//
-
 #include "HAP64.h"
 
-// Fields (rather static..)
+//████████████████████████████
+//█                          █
+//█ Fields (rather static..) █
+//█                          █
+//████████████████████████████
+
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private int individualAttack_; // 0x70
+ */
 unsigned long HAP64::pP_gIAo() {
-    return 0x80;
+    return 0x70;
 }
 
-
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private int individualDefense_; // 0x74
+ */
 unsigned long HAP64::pP_gIDo() {
-    return 0x84;
+    return 0x74;
 }
 
-
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private int individualStamina_; // 0x78
+ */
 unsigned long HAP64::pP_gISo() {
-    return 0x88;
-}
-
-
-unsigned long HAP64::pP_gCMo() {
-    return 0x8C;
-}
-
-
-unsigned long HAP64::pP_gAcMo() {
-    return 0xBC;
-}
-
-
-unsigned long HAP64::pP_gHo() {
     return 0x78;
 }
 
-
-unsigned long HAP64::pP_gWo() {
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private float cpMultiplier_; // 0x7C
+ */
+unsigned long HAP64::pP_gCMo() {
     return 0x7C;
 }
 
-
-unsigned long HAP64::pP_iEo() {
-    return 0x60;
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private float additionalCpMultiplier_; // 0xAC
+ */
+unsigned long HAP64::pP_gAcMo() {
+    return 0xAC;
 }
 
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private float heightM_; // 0x68
+ */
+unsigned long HAP64::pP_gHo() {
+    return 0x68;
+}
 
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private float weightKg_; // 0x6C
+ */
+unsigned long HAP64::pP_gWo() {
+    return 0x6C;
+}
+
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private bool isEgg_; // 0x50
+ */
+unsigned long HAP64::pP_iEo() {
+    return 0x50;
+}
+
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private PokemonDisplayProto pokemonDisplay_; // 0xD8
+ */
+unsigned long HAP64::pP_gPDo() {
+    return 0xD8;
+}
+
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private string nickname_; // 0xB8
+ */
+unsigned long HAP64::pP_nNo() {
+    return 0xB8;
+}
+
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private int move1_; // 0x38
+ */
+unsigned long HAP64::pp_m1o() {
+    return 0x38;
+}
+
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @field private int move2_; // 0x3C
+ */
+unsigned long HAP64::pp_m2o() {
+    return 0x3C;
+}
+
+/**
+ * @class public sealed class PokemonSettingsProto : IPokemonSettings, IMessage<PokemonSettingsProto>, IMessage, IEquatable<PokemonSettingsProto>, IDeepCloneable<PokemonSettingsProto>, IBufferMessage // TypeDefIndex: 17392
+ * @field private float pokedexHeightM_; // 0x60
+ */
 unsigned long HAP64::pSp_gPHo() {
     return 0x60;
 }
 
-
-unsigned long HAP64::pSp_gPWo() {
-    return 0x64;
-}
-
-
-unsigned long HAP64::pP_gPDo() {
-    return 0xE8;
-}
-
-
-unsigned long HAP64::pDp_gSo() {
-    return 0x20;
-}
-
-
-unsigned long HAP64::pDp_gGo() {
-    return 0x1C;
-}
-
-
-unsigned long HAP64::pDp_gWco() {
-    return 0x28;
-}
-
-
-unsigned long HAP64::eOp_gPo() {
-    return 0x18;
-}
-
-
-unsigned long HAP64::wPp_gPo() {
-    return 0x40;
-}
-
-
-unsigned long HAP64::mPi_gISo() {
-    return 0x48;
-}
-
-unsigned long HAP64::mCh_sTTo() {
-    return 0x28;
-}
-
-unsigned long HAP64::sTt_maISo() {
-    return 0x34;
-}
-
-unsigned long HAP64::pP_nNo() {
-    return 0xC8;
-}
-
-unsigned long HAP64::gBdP_fIo() {
-    return 0x20;
-}
-
-unsigned long HAP64::gBdP_gIo() {
-    return 0x18;
-}
-
-unsigned long HAP64::fLp_fRSo() {
-    return 0x208;
-}
-
-unsigned long HAP64::pp_m1o() {
-    return 0x48;
-}
-
-unsigned long HAP64::pp_m2o() {
-    return 0x4C;
-}
-
+/**
+ * @class public sealed class PokemonSettingsProto : IPokemonSettings, IMessage<PokemonSettingsProto>, IMessage, IEquatable<PokemonSettingsProto>, IDeepCloneable<PokemonSettingsProto>, IBufferMessage // TypeDefIndex: 17392
+ * @field private HoloPokemonType type1_; // 0x18
+ */
 unsigned long HAP64::pSp_t1o() {
     return 0x18;
 }
 
+/**
+ * @class public sealed class PokemonSettingsProto : IPokemonSettings, IMessage<PokemonSettingsProto>, IMessage, IEquatable<PokemonSettingsProto>, IDeepCloneable<PokemonSettingsProto>, IBufferMessage // TypeDefIndex: 17392
+ * @field private HoloPokemonType type2_; // 0x1C
+ */
 unsigned long HAP64::pSp_t2o() {
     return 0x1C;
 }
 
+/**
+ * @class public sealed class PokemonSettingsProto : IPokemonSettings, IMessage<PokemonSettingsProto>, IMessage, IEquatable<PokemonSettingsProto>, IDeepCloneable<PokemonSettingsProto>, IBufferMessage // TypeDefIndex: 17392
+ * @field private float pokedexWeightKg_; // 0x64
+ */
+unsigned long HAP64::pSp_gPWo() {
+    return 0x64;
+}
 
+/**
+ * @class public sealed class PokemonDisplayProto : IMessage<PokemonDisplayProto>, IMessage, IEquatable<PokemonDisplayProto>, IDeepCloneable<PokemonDisplayProto>, IBufferMessage // TypeDefIndex: 17374
+ * @field public bool Shiny; // 0x18
+ */
+unsigned long HAP64::pDp_gSo() {
+    return 0x18;
+}
+
+/**
+ * @class public sealed class PokemonDisplayProto : IMessage<PokemonDisplayProto>, IMessage, IEquatable<PokemonDisplayProto>, IDeepCloneable<PokemonDisplayProto>, IBufferMessage // TypeDefIndex: 17374
+ * @field public PokemonDisplayProto.Types.Gender Gender; // 0x14
+ */
+unsigned long HAP64::pDp_gGo() {
+    return 0x14;
+}
+
+/**
+ * @class public sealed class PokemonDisplayProto : IMessage<PokemonDisplayProto>, IMessage, IEquatable<PokemonDisplayProto>, IDeepCloneable<PokemonDisplayProto>, IBufferMessage // TypeDefIndex: 17374
+ * @field public GameplayWeatherProto.Types.WeatherCondition WeatherBoostedCondition; // 0x20
+ */
+unsigned long HAP64::pDp_gWco() {
+    return 0x20;
+}
+
+/**
+ * @class public sealed class EncounterOutProto : IMessage<EncounterOutProto>, IMessage, IEquatable<EncounterOutProto>, IDeepCloneable<EncounterOutProto>, IBufferMessage // TypeDefIndex: 17943
+ * @field public WildPokemonProto Pokemon; // 0x10
+ */
+unsigned long HAP64::eOp_gPo() {
+    return 0x10;
+}
+
+/**
+ * @class public sealed class WildPokemonProto : IMessage<WildPokemonProto>, IMessage, IEquatable<WildPokemonProto>, IDeepCloneable<WildPokemonProto>, IBufferMessage // TypeDefIndex: 21949
+ * @field public PokemonProto Pokemon; // 0x38
+ */
+unsigned long HAP64::wPp_gPo() {
+    return 0x38;
+}
+
+/**
+ * @class public sealed class WildPokemonProto : IMessage<WildPokemonProto>, IMessage, IEquatable<WildPokemonProto>, IDeepCloneable<WildPokemonProto>, IBufferMessage // TypeDefIndex: 21949
+ * @field public ulong EncounterId; // 0x10
+ */
+unsigned long HAP64::wPp_gEIo() {
+    return 0x10;
+}
+
+/**
+ * @class public class MapPokestopInteractive : MapPokestopMode, IMapPokestopInteractive, IMapPokestopMode, IMapPlaceAsset, IDisposable, IScope // TypeDefIndex: 8625
+ * @field public PoiItemSpinner ItemSpinner; // 0x70
+ */
+unsigned long HAP64::mPi_gISo() {
+    return 0x70;
+}
+
+/**
+ * @class public class MapContentHandler : MonoBehaviour, ICellManager // TypeDefIndex: 15608
+ * @field private SpaceTimeThrottle fetchThrottle; // 0x28
+ */
+unsigned long HAP64::mCh_sTTo() {
+    return 0x28;
+}
+
+/**
+ * @class public class SpaceTimeThrottle : MonoBehaviour // TypeDefIndex: 657
+ * @field private double maxIntervalS; // 0x28
+ */
+unsigned long HAP64::sTt_maISo() {
+    return 0x28;
+}
+
+/**
+ * @class public sealed class GiftBoxDetailsProto : IMessage<GiftBoxDetailsProto>, IMessage, IEquatable<GiftBoxDetailsProto>, IDeepCloneable<GiftBoxDetailsProto>, IBufferMessage // TypeDefIndex: 20301
+ * @field public string SenderId; // 0x18
+ */
+unsigned long HAP64::gBdP_fIo() {
+    return 0x18;
+}
+
+/**
+ * @class public sealed class GiftBoxDetailsProto : IMessage<GiftBoxDetailsProto>, IMessage, IEquatable<GiftBoxDetailsProto>, IDeepCloneable<GiftBoxDetailsProto>, IBufferMessage // TypeDefIndex: 20301
+ * @field public ulong GiftboxId; // 0x10
+ */
+unsigned long HAP64::gBdP_gIo() {
+    return 0x10;
+}
+
+/**
+ * @class public class FriendsListPage : BaseFriendsListPage // TypeDefIndex: 6023
+ * @field private readonly IFriendsRpcService decf; // 0x288
+ */
+unsigned long HAP64::fLp_fRSo() {
+    return 0x288;
+}
+
+/**
+ * @class public class SpatialCacheManager // TypeDefIndex: 16026
+ * @field private readonly HashSet<ulong> ehka; // 0x20
+ */
 unsigned long HAP64::cM_mSCo() {
     return 0x20;
 }
 
+/**
+ * @class public sealed class IncenseEncounterOutProto : IMessage<IncenseEncounterOutProto>, IMessage, IEquatable<IncenseEncounterOutProto>, IDeepCloneable<IncenseEncounterOutProto>, IBufferMessage // TypeDefIndex: 17987
+ * @field public PokemonProto Pokemon; // 0x18
+ */
 unsigned long HAP64::iEoP_gPFo() {
-    return 0x20;
+    return 0x18;
 }
 
+/**
+ * @class public sealed class DiskEncounterOutProto : IMessage<DiskEncounterOutProto>, IMessage, IEquatable<DiskEncounterOutProto>, IDeepCloneable<DiskEncounterOutProto>, IBufferMessage // TypeDefIndex: 17993
+ * @field public PokemonProto Pokemon; // 0x18
+ */
 unsigned long HAP64::dEoP_gPFo() {
     return 0x18;
 }
 
-unsigned long HAP64::wPp_gEIo() {
-    return 0x18;
-}
+//█████████████████████████████████
+//█                               █
+//█ Methods (change every update) █
+//█                               █
+//█████████████████████████████████
 
-// Methods (change every update)
 /**
- * public class PoiItemSpinner : BasePoiSpinner, DGOKHLILKCN // TypeDefIndex: 12322
- * 	private void VQOM]NWNMT]() { } 0x22C7FDC 0x22C8204
- * -> Es gibt mehrere private methoden... //spin
+ * @class public class PoiItemSpinner : BasePoiSpinner, IPoiItemSpinner // TypeDefIndex: 15820
+ * @method private IPromise<FortSearchOutProto> ckin() { }
  */
 unsigned long HAP64::pIs_sSRo() {
-    return 0x5D816F0;
+    return 0x96565A8;
 }
 
 /**
- * public class PoiItemSpinner : BasePoiSpinner, DGOKHLILKCN // TypeDefIndex: 12322
- * 		public override void Initialize(DNGMDBDCDIA OTTYNTMU]PM) { }
+ * @class public class PoiItemSpinner : BasePoiSpinner, IPoiItemSpinner // TypeDefIndex: 15820
+ * @method public override void Initialize(IMapPlace newMapPlace) { }
  */
 unsigned long HAP64::pIs_Io() {
-    return 0x5D80F40;
+    return 0x9655A90;
 }
 
 
 /**
- * public class PokemonInventoryGuiController : LegacyGuiController, M]YU]VMOOQU, T]ZZWN]YSXZ, AJAJDOCLENJ, IGuiLayerable, IHideable, UN[TPMW]XXX // TypeDefIndex: 11743
- * 	private void OYUMNM[VZVZ(PokemonListLineItemView VSVN[U[UMXV, PokemonProto NYUNOT[]XPR, int [NYPQNXW]VS) { }
- * 	-> Suche nach Anzahl Param, private, erstes Arg PokemonListLineItemView
+ * @class public class PokemonInventoryGuiController : GuiController, IPokemonInventoryGuiController, IGuiController, IScope, IGuiLayerable, IHideable, ISortablePokemonList, IInitializable // TypeDefIndex: 14783
+ * @method private void chon(PokemonListLineItemView a, PokemonProto b, int c) { }
+ * 	-> Search by number of parameters, private, first argument PokemonListLineItemView
  */
 unsigned long HAP64::pIgC_m1o() {
-    return 0x5C46588;
+    return 0x942E670;
 }
 
 /**
- * public class EncounterPokemon : MonoBehaviour, IEncounterPokemon // TypeDefIndex: 7662
- * 	protected virtual float RRWYXRQQO[O() { }
- * 	-> pech gehabt, weiter suchen oder alle X protected float setzen
+ * @class public class EncounterPokemon : MonoBehaviour, IEncounterPokemon // TypeDefIndex: 9214
+ * @method protected virtual float bsob() { }
+ * @slot 49
  */
 unsigned long HAP64::eP_gAPo() {
-    return 0x65CB9FC;
+    return 0xA5B32C4;
 }
 
 /**
- * public class EncounterPokemon : MonoBehaviour, IEncounterPokemon // TypeDefIndex: 7662
- * protected virtual float [XXPQQR[PYX() { }
- * 	-> pech gehabt, weiter suchen oder alle X protected float setzen -> Nicht möglich, siehe oben
+ * @class public class EncounterPokemon : MonoBehaviour, IEncounterPokemon // TypeDefIndex: 9214
+ * @method protected virtual float bsoc() { }
+ * @slot 50
  */
 unsigned long HAP64::eP_gDPo() {
-    return 0x65CBD24;
+    return 0xA5B397C;
 }
 
 /**
- * public class Pokeball : MonoBehaviour, IPokeball, AJAJDOCLENJ // TypeDefIndex: 7747
- * 	private int U[XV]OOOUSN(CatchPokemonOutProto NYUNOT[]XPR) { }
- * 	-> Suche auf private, int return, 1 arg, arg CatchPokemonOutProto (sofern nicht obf?)
+ * @class public class Pokeball : MonoBehaviour, IPokeball, IScope // TypeDefIndex: 9324
+ * @method private int bsyf(CatchPokemonOutProto a) { }
+ * 	-> Search on private, int return, 1 arg, arg CatchPokemonOutProto (unless obf?)
  */
 unsigned long HAP64::cPOp_gCr() {
-    return 0x65F2108;
+    return 0xA5F5FCC;
 }
 
 
 /**
- * public class EncounterCaptureState : GameState, ]RYOTVTZRMY // TypeDefIndex: 7614
- * 	private IEnumerator<_IARMeshData> WST[MPPSZ[V(CatchPokemonOutProto PTM[TOPO[PT) { }
- * 		private IEnumerator<ISchedule> RunPokemonCaptured(CatchPokemonOutProto captureResults) { }
- * 	-> Gibt es mehrere derartige -> Vermutlich pech
+ * @class public class EncounterCaptureState : GameState, IEncounterCaptureState // TypeDefIndex: 9161
+ * @method private void bsgd(CatchPokemonOutProto a) { }
+ * @position 1
  */
 unsigned long HAP64::eCs_rPCo() {
-    return 0x65B8290;
+    return 0xA592ECC;
 }
 
 
 /**
- * public sealed class IncenseEncounterOutProto : IMessage<IncenseEncounterOutProto>, IMessage, IEquatable<IncenseEncounterOutProto>, IDeepCloneable<IncenseEncounterOutProto> // TypeDefIndex: 14333
+ * @class public sealed class IncenseEncounterOutProto : IMessage<IncenseEncounterOutProto>, IMessage, IEquatable<IncenseEncounterOutProto>, IDeepCloneable<IncenseEncounterOutProto> // TypeDefIndex: 14333
  * 	public IncenseEncounterOutProto.Types.Result W]OZ[W]TOVY() { }
+ * @deprecated not used anymore
  */
 unsigned long HAP64::iEoP_gRo() {
     return 0x6A2B268;
@@ -223,220 +335,192 @@ unsigned long HAP64::iEoP_gRo() {
 
 
 /**
- * public class GameMasterData : MonoBehaviour, MRZU]U]QTWX, MXWZMVNQP[R // TypeDefIndex: 128
- * 	public PokemonSettingsProto Get_PokemonSettings(PokemonProto TU[VROTWNSO) { }
+ * @class public class GameMasterData : MonoBehaviour, IGameMasterData, IAvatarCustomizationSettings // TypeDefIndex: 216
+ * @method public PokemonSettingsProto Get_PokemonSettings(PokemonProto pokemon, bool useDisplay = True) { }
  */
 unsigned long HAP64::gMd_gPso() {
-    return 0x5A178A8;
+    return 0x8BA9B54;
 }
 
 
 /**
- * public class MapContentHandler : MonoBehaviour, PZSOV]RPXUN // TypeDefIndex: 12128
- * 	private void ZUYTSPQ]TM[(GetMapObjectsOutProto YXWQTSVYPRX) { }
- */
-unsigned long HAP64::mCh_gMOcIo() {
-    return 0x5D276FC;
-}
-
-
-/**
- * public class OpenGiftGuiController.Factory : InstalledPrefabFactory<OpenGiftGuiController.MWWWRRNPZOW, OpenGiftGuiController> // TypeDefIndex: 5021
- * 	public override OpenGiftGuiController Create(OpenGiftGuiController.MWWWRRNPZOW S]SPVMSZZ]Q) { }
- */
-unsigned long HAP64::oGgCf_Co() {
-    return 0x6326DC0;
-}
-
-
-/**
- * public class GiftingRpcService : MonoBehaviour, IBalloonAssetManager // TypeDefIndex: 4947
- * 	public KMDIHMDKEBL<OpenGiftOutProto> OpenGift(ulong NONUWTUSURM, string UNMVXXMWTYR, string ZYSPXNMSZ[R) { }
- */
-unsigned long HAP64::gRs_oGo() {
-    return 0x6308C18;
-}
-
-
-/**
- * public class GiftingRpcService : MonoBehaviour, IBalloonAssetManager // TypeDefIndex: 4947
- *  	public KMDIHMDKEBL<CheckSendGiftOutProto> CheckGiftingStatus(string TTTUY]YMMNQ) { }
- */
-unsigned long HAP64::gRs_cGSo() {
-    return 0x63092A8;
-}
-
-
-/**
- * public sealed class PokemonProto : CHMFMJDIFHD, EHOKNIMEGKI, IOOEJLHGPGP, KNHNEKJHDKB, HDBOCEGOIDG, EIFHLFELFGK, HLAGEAFIKFI, CHEEHAMOKHJ, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto> // TypeDefIndex: 13889
- * 	public bool TNTUORQ[XTN() { }
- * 	public bool get_IsSelectionDisabled() { }
- */
-unsigned long HAP64::pIMs_tSo() {
-    return 0x6981B4C;
-}
-
-
-/**
- * public class MapPokestop : MonoBehaviour, BOKOJKGANLG, DNGMDBDCDIA, IPoi, AJAJDOCLENJ // TypeDefIndex: 6749
- * 	private bool ORPSUMSVWXW(PokestopIncidentDisplayProto SNU]NZ]UVPS, bool RQWUNQOUWOQ) { }
- */
-unsigned long HAP64::mP_gIiA() {
-    return 0x650E708;
-}
-
-
-/**
- * public class ItemBagImpl : HJGGHOKGMEM // TypeDefIndex: 1554
- * 	public int SMT]UOW]]OS(Item YYWVYSRSSQM) { }
- * -> Einzige methode mit 1 param und return int
- */
-unsigned long HAP64::iBi_gICo() {
-    return 0x5EA10F4;
-}
-
-
-/**
- * public class ItemBagImpl : HJGGHOKGMEM // TypeDefIndex: 1554
-     * 	public KMDIHMDKEBL<RecycleItemOutProto> V[SYUVQQWVS(Item SU]VUXMSVVO, int TNYMWZRV[UW) { }
- * -> No chance
- */
-unsigned long HAP64::iBi_rIo() {
-    return 0x5EA44AC;
-}
-
-
-/**
- * public static class RQUSOPZUZYR // TypeDefIndex: 685
- * 	public static string R[ZRZTVYRPQ(string YNWSTTZYVUN, bool VX[ZRQSQ]RO) { }
- * 	-> No chance
- * 	// Namespace: Niantic.Holoholo
-[Extension]
-public static class StringExt // TypeDefIndex: 718
- 	private const char ZERO_WIDTH_JOINER = '\x200d';
-	private const char VARIATION_SELECTOR_16 = '\xfe0f';
-	private static readonly Regex HtmlTagMatcherRegex; // 0x0
-	private const string HtmlEntityMatcherExpression = "(&#)([0-9]+)(;)";
-	private static readonly MatchEvaluator HtmlEntityMatchEvaluator; // 0x8
-	private const string FORMAT_ARGS_REGEX = "{[\\d]+(:[^:}]+)?}";
- 	[Extension]
-	// RVA: 0x46E3BD8 Offset: 0x46E2BD8 VA: 0x46E3BD8
-	public static string HtmlDecode(string toDecode, bool useHex) { }
-
- original:
- // RVA: 0x46E3AB0 Offset: 0x46E2AB0 VA: 0x46E3AB0
-	public static string StripHtmlTags(string sourceToStrip, bool replaceHtmlEntityCharacters) { }
-
- */
-unsigned long HAP64::sE_hDo() {
-    return 0x64037F0;
-}
-
-
-/**
- * public class GameMasterData : MonoBehaviour, MRZU]U]QTWX, MXWZMVNQP[R // TypeDefIndex: 128
- * 	public PokemonSettingsProto Get_PokemonSettings(int UPXWUUUOQZW) { }
+ * @class public class GameMasterData : MonoBehaviour, IGameMasterData, IAvatarCustomizationSettings // TypeDefIndex: 216
+ * @method public PokemonSettingsProto Get_PokemonSettings(int pokemonId) { }
  */
 unsigned long HAP64::gMd_gPsBido() {
-    return 0x5A17C54;
+    return 0x8BAA1FC;
 }
 
 
 /**
- * public class HashSet<T> : ICollection<T>, IEnumerable<T>, IEnumerable, ISet<T>, IReadOnlyCollection<T>, ISerializable, IDeserializationCallback // TypeDefIndex: 25306
- * |-RVA: 0x3FF3C84 Offset: 0x3FF3C84 VA: 0x3FF3C84
-	|-HashSet<long>.Clear
- * No chance
+ * @class public class MapContentHandler : MonoBehaviour, ICellManager // TypeDefIndex: 15608
+ * @method private void cjos(GetMapObjectsOutProto a) { }
  */
-unsigned long HAP64::hS_co() {
-    return 0x4341CDC;
+unsigned long HAP64::mCh_gMOcIo() {
+    return 0x95BFA08;
 }
 
 
 /**
- * public class Memderp // TypeDefIndex: 12484
- * 	private void URUXWPWUQVU(HashSet<ulong> WS]RY[ZNMUQ, List<ulong> U[PXUPUR[NS, List<ulong> YQU]MSZRWZS, List<ulong> MQVWPVRWXQR) { }
- * -> No Chance
- * // Namespace: Niantic.Holoholo.Map.S2Cache
-public class SpatialCacheManager // TypeDefIndex: 13810
- 	// RVA: 0x3F9D1E8 Offset: 0x3F9C1E8 VA: 0x3F9D1E8
-	private void UpdateSceneCells(HashSet<ulong> fetchCandidates, List<ulong> addToSceneCells, List<ulong> updatedCells, List<ulong> removeFromSceneCells) { }
- * */
-unsigned long HAP64::cM_mSFo() {
-    return 0x5DC41CC;
+ * @class public class OpenGiftGuiController.Factory : InstalledPrefabFactory<OpenGiftGuiController.Data, OpenGiftGuiController> // TypeDefIndex: 6216
+ * @method public override OpenGiftGuiController Create(OpenGiftGuiController.Data data) { }
+ */
+unsigned long HAP64::oGgCf_Co() {
+    return 0xA07148C;
 }
 
 
 /**
- * public abstract class MapPokemon : MonoBehaviour, MMOVZWM]ZQS, AJAJDOCLENJ // TypeDefIndex: 12194
- * 	private void YYZ[XTPV[WS(object TPZX]TMUZOX, EventArgs VNMPTUPWQVQ) { }
- * private void, param mit EventArgs, 2 params
- * 	private void OnTap(object sender, EventArgs e) { }
+ * @class public class GiftingRpcService : IGiftingRpcService // TypeDefIndex: 6131
+ * @method public IPromise<OpenGiftOutProto> OpenGift(ulong giftboxId, string senderPlayerId, string senderNiaAccountId) { }
+ */
+unsigned long HAP64::gRs_oGo() {
+    return 0xA0101B8;
+}
+
+
+/**
+ * @class public class GiftingRpcService : IGiftingRpcService // TypeDefIndex: 6131
+ * @method public IPromise<CheckSendGiftOutProto> CheckGiftingStatus(string recipientPlayerId) { }
+ */
+unsigned long HAP64::gRs_cGSo() {
+    return 0xA010AE0;
+}
+
+
+/**
+ * @class public sealed class PokemonProto : IPokemonProtoBaseData, IPokemonBattleData, IPokemonDeploymentData, IPokemonEggData, IPokemonMegaData, IPokemonMetamonData, IPokemonOriginData, IPokemonTraitData, IMessage<PokemonProto>, IMessage, IEquatable<PokemonProto>, IDeepCloneable<PokemonProto>, IBufferMessage // TypeDefIndex: 17380
+ * @method public bool IsSelectionDisabled(IGameMasterData gameMasterData) { }
+ */
+unsigned long HAP64::pIMs_tSo() {
+    return 0xB35562C;
+}
+
+
+/**
+ * @class public sealed class MapPokestop : AbstractMapPlace, IMapPokestop, IMapPlace, IPlace, IDisposable, IScope, IInitializer<IMapPlace.PoiSetupData> // TypeDefIndex: 8608
+ * @method private bool bqwk(PokestopIncidentDisplayProto a, bool b) { }
+ */
+unsigned long HAP64::mP_gIiA() {
+    return 0xA4AF0C0;
+}
+
+/**
+ * @class public abstract class MapPokemon : MonoBehaviourScope, IMapPokemon, IScope // TypeDefIndex: 15698
+ * @method private void OnTap(object sender, EventArgs e) { }
  */
 unsigned long HAP64::mP_oTo() {
-    return 0x5D592E8;
+    return 0x9612194;
 }
 
-
 /**
- * public class EncounterInteractionState : GameState, IAILNNMMFOK, ICustomInstaller // TypeDefIndex: 7625
- * 	private void NRPX[OWYTQY(Item USM[QUXNUST) { } 0x257C7F8
- * 		private void set_ActiveBerry(Item value) { }
- * Prüfen: 1 param -> Item
+ * @class public class ItemBagImpl : IItemBag // TypeDefIndex: 2139
+ * @method public int GetItemCount(Item itemType) { }
+ * -> The only method with 1 parameter and return int
  */
-unsigned long HAP64::eIs_sABo() {
-    return 0x65BA014;
+unsigned long HAP64::iBi_gICo() {
+    return 0x97D7E44;
 }
 
+/**
+ * @class public class ItemBagImpl : IItemBag // TypeDefIndex: 2139
+ * @method public IPromise<RecycleItemOutProto> RecycleItem(ItemInventoryItemWidget.ItemData itemData, int numToRecycle, ISet<Item> expiringItemsCopy) { }
+ */
+unsigned long HAP64::iBi_rIo() {
+    return 0x97DFEDC;
+}
 
 /**
- * public class ItemBagImpl : HJGGHOKGMEM // TypeDefIndex: 1554
- * 	public KMDIHMDKEBL<UseItemEncounterOutProto> S]QYVS]UNVO(Item SU]VUXMSVVO, MMOVZWM]ZQS TMUXXOMMQ[M) { }
- * 		public IPromise<UseItemEncounterOutProto> UseItemForEncounter(Item item, IMapPokemon encounterPokemon) { }
+ * @class public class ItemBagImpl : IItemBag // TypeDefIndex: 2139
+ * @method private void yfr() { }
+ * @position 2
+ */
+unsigned long HAP64::iBi_gIo() {
+    return 0x97D7CE8;
+}
+
+/**
+ * @class public class ItemBagImpl : IItemBag // TypeDefIndex: 2139
+ * @method public IPromise<UseItemEncounterOutProto> UseItemForEncounter(Item item, IMapPokemon encounterPokemon) { }
  */
 unsigned long HAP64::iBi_uIfEo() {
-    return 0x5EA3E24;
+    return 0x97DF33C;
+}
+
+/**
+ * @image holo-game.dll
+ * @namespace Niantic.Holoholo
+ * @class public static class StringExt // TypeDefIndex: 871
+ * @method public static string StripHtmlTags(string sourceToStrip, bool replaceHtmlEntityCharacters) { }
+ */
+unsigned long HAP64::sE_hDo() {
+    return 0xA4258EC;
+}
+
+/**
+ * @class public class HashSet<T> : ICollection<T>, IEnumerable<T>, IEnumerable, ISet<T>, IReadOnlyCollection<T>, ISerializable, IDeserializationCallback // TypeDefIndex: 34423
+ * @method public void Clear() { }
+ * @comment |-HashSet<long>.Clear
+ */
+unsigned long HAP64::hS_co() {
+    return 0x6232B98;
 }
 
 
 /**
- * public class BuddyPokemonService : ObservableService<BuddyPokemonProto>, WO[YOOWXSNS, DDAMPNKNFLJ, IObservableService<BuddyPokemonProto> // TypeDefIndex: 6470
- * 	private void PWUWZZNUYST() { }
- * -> Nope
- * 	public void Initialize() { }
+ * @class public class SpatialCacheManager // TypeDefIndex: 16026
+ * @method private void ckxx(HashSet<ulong> a, List<ulong> b, List<ulong> c, List<ulong> d) { }
+ */
+unsigned long HAP64::cM_mSFo() {
+    return 0x96BC038;
+}
+
+
+/**
+ * @class public class EncounterInteractionState : GameState, IEncounterInteractionState, ICustomInstaller // TypeDefIndex: 9175
+ * @method private void set_ActiveBerry(Item value) { }
+ * Check: 1 parameter -> Item
+ */
+unsigned long HAP64::eIs_sABo() {
+    return 0xA597990;
+}
+
+
+/**
+ * @class public class BuddyPokemonService : ObservableService<BuddyPokemonProto>, IDebugBuddyPokemonService, IBuddyPokemonService, IObservableService<BuddyPokemonProto>, IInitializable // TypeDefIndex: 8334
+ * @method public void Initialize() { }
  */
 unsigned long HAP64::bPs_iO() {
-    return 0x64C47CC;
+    return 0xA40C30C;
 }
 
 
 /**
- * public class BuddyRpcService : MonoBehaviour, IBuddyRpcService, KCIINPIAENA // TypeDefIndex: 6179
- * 	private void PWUWZZNUYST() { }
- * -> Einzige private void ohne args
+ * @class public class BuddyRpcService : MonoBehaviour, IBuddyRpcService, IDiContainerProvider // TypeDefIndex: 8052
+ * @method private void bpcl() { }
+ * -> The only private void without arguments
  * 	private void Initialize() { }
  * */
 unsigned long HAP64::bRs_iO() {
-    return 0x6485D70;
+    return 0xA3A6AC0;
 }
 
 
 /**
-     * public class BuddySettingsService : MonoBehaviour, IBuddySettingsService // TypeDefIndex: 6181
- * 	|-BuddySettingsService.ZVNVN[U]XRY<PlayerService.PlayerInfo>
- * -> Nope
- * private void GetMapObjectsCallbackImpl(GetMapObjectsOutProto result) { }
+ * @class public class MapContentHandler : MonoBehaviour, ICellManager // TypeDefIndex: 15608
+ * @method private void cjos(GetMapObjectsOutProto a) { }
  */
 unsigned long HAP64::bSSo_pIo() {
-    return 0x5D276FC;
+    return 0x95BFA08;
 }
 
 
 /**
- * public sealed class OpenBuddyGiftOutProto : IMessage<OpenBuddyGiftOutProto>, IMessage, IEquatable<OpenBuddyGiftOutProto>, IDeepCloneable<OpenBuddyGiftOutProto> // TypeDefIndex: 16987
+ * @class public sealed class OpenBuddyGiftOutProto : IMessage<OpenBuddyGiftOutProto>, IMessage, IEquatable<OpenBuddyGiftOutProto>, IDeepCloneable<OpenBuddyGiftOutProto> // TypeDefIndex: 16987
  * 	public void XZVM[XWSUMR(BuddyObservedData USM[QUXNUST) { }
  * 1 param von Typ BuddyObservedData
  * 	public void set_ObservedData(BuddyObservedData value) { }
+ * @deprecated protos don't have setters anymore
  */
 unsigned long HAP64::oBgPo_sBGo() {
     return 0x6E67794;
@@ -444,141 +528,120 @@ unsigned long HAP64::oBgPo_sBGo() {
 
 
 /**
+ * @class public class PokemonBagImpl : IPokemonBag // TypeDefIndex: 2163
+ * @method public void UnlockPokemonTempEvos() { }
  * public class V[RNSYVYT[O : IPhotoLeaderClaimSessionManager // TypeDefIndex: 1953
  * public class PokemonBagImpl : FMLOAMFKNEO // TypeDefIndex: 1572
  * 	private void VZ[[XQY]TST() { } 0x3B341C0
- * 	1 von 2, einfach alle hooken die private void sind?
- * 	public void UnlockPokemonTempEvos() { }
-
+ * 	1 of 2, simply hook all the private voids?
  */
 unsigned long HAP64::pBi_gSo() {
-    return 0x5EB1C14;
+    return 0x97F62A0;
 }
 
 
 /**
- * public class PokemonBagImpl : FMLOAMFKNEO // TypeDefIndex: 1572
- * 		public PokemonProto MMPWYQVRRMS(ulong WXRQWVMRQXQ) { }
- * 			public PokemonProto GetPokemon(ulong id) { }
+ * @class public class PokemonBagImpl : IPokemonBag // TypeDefIndex: 2163
+ * @method public PokemonProto GetPokemon(ulong id) { }
  */
 unsigned long HAP64::pBi_gPpBIo() {
-    return 0x5EAF0D0;
+    return 0x97F26B0;
 }
 
 
 /**
- * public class PokemonBagImpl : FMLOAMFKNEO // TypeDefIndex: 1572
- * 	public KMDIHMDKEBL<ReleasePokemonOutProto> [Y[]WP[QPSM(PokemonProto TU[VROTWNSO) { }
- * 		public IPromise<ReleasePokemonOutProto> ReleasePokemon(PokemonProto pokemon) { }
+ * @class public class PokemonBagImpl : IPokemonBag // TypeDefIndex: 2163
+ * @method public IPromise<ReleasePokemonOutProto> ReleasePokemon(PokemonProto pokemon) { }
  */
 unsigned long HAP64::pBi_rPo() {
-    return 0x5EAFD8C;
+    return 0x97F3750;
 }
 
 
 /**
- * public sealed class RpcHandler : MonoBehaviour, KEOEMHLJPPM, ICustomInstaller // TypeDefIndex: 2282
- * 	private MEDBDEBEHGJ<OutProtoT> UXQVMXPSSPT<InProtoT, OutProtoT>(int TQNQYV[NSMQ, InProtoT SSXTRUVS]YS, int TRN]WSPY]ZT = 0, int XXRXRQRP[XU = 0, bool NWZYVWX]X[O = False) { }
- * -> Nope oder Anzahl param??
- * 	private IRpcPromise<OutProtoT> SendRpc<InProtoT, OutProtoT>(int method, InProtoT inProto, int rpcRetryDelayMs = 0, int rpcTimeoutMs = 0, bool beTenacious = False) { }
+ * @class public sealed class RpcHandler : MonoBehaviour, IRpcHandler // TypeDefIndex: 3098
+ * @method public IRpcPromise<OutProtoT> SendRpc<InProtoT, OutProtoT>(int method, InProtoT inProto, int rpcRetryDelayMs = 0, int rpcTimeoutMs = 0, bool beTenacious = False) { }
+ * @generic RpcHandler.SendRpc<object, object>
  */
 unsigned long HAP64::rH_So() {
-    return 0x416C6A4;
+    return 0x5B76574;
 }
 
 /**
- * public class ItemBagImpl
-* private void AddCameraItem() { }
+ * @class public class PlayerService : ObservableService<PlayerService.PlayerInfo>, IPlayerService, IObservableService<PlayerService.PlayerInfo>, IOneTimeObservableService<PlayerService.PlayerInfo> // TypeDefIndex: 749
+ * @method private void vaz(ClientPlayerProto a) { }
 */
-
-unsigned long HAP64::iBi_gIo() {
-    return 0x5EA102C;
-}
-
-/**
- * PlayerService playerinstance
-* public IEnumerable<QuestProto> get_Quests() { }
- *
-*/
-
 unsigned long HAP64::pS_gQo() {
-    return 0x62AF7D4;
+    return 0xA205E50;
 }
 
 // TODO: 0.335.0 all below + documentation please
 
-/*
- * public class CombatStateV2
- * // RVA: 0x44A5254 Offset: 0x44A4254 VA: 0x44A5254 Slot: 9
-	public void ObserveCombatState(CombatProto.Types.CombatState stateOfCombat) { }
+/**
+ * @class public class CombatStateV2 : IScope, ICombatStateV2, IStateLogic<CombatStateV2.Data>, IStateExitable // TypeDefIndex: 6774
+ * @method public void ObserveCombatState(CombatProto.Types.CombatState stateOfCombat) { }
  */
 unsigned long HAP64::cD_Io() {
-    return 0x6360FB8;
+    return 0xA16737C;
 }
 
-/*
- * public class CombatCountdownGui
- * // RVA: 0x45574C4 Offset: 0x45564C4 VA: 0x45574C4
-	private IEnumerator<ISchedule> Animate() { }
- */
-unsigned long HAP64::cCg_aCo() {
-    return 0x640DA3C;
-}
-
-/*
- * public class CombatEndState
- * // RVA: 0x44D86AC Offset: 0x44D76AC VA: 0x44D86AC
-	private void EndInvasionSession(CombatProto.Types.CombatState endState, CombatPlayerFinishState finishState, int remainingPokemon) { }
-
- */
-unsigned long HAP64::cD_eISo() {
-    return 0x63941A4;
-}
-
-/*
- * public class IncidentService
- * // RVA: 0x416F3FC Offset: 0x416E3FC VA: 0x416F3FC Slot: 7
-	public void StartIncidentEncounter() { }
- */
-unsigned long HAP64::cS_gCeWo() {
-    return 0x60193A8;
-}
-
-/*
- * public class CombatStateV2
- * // RVA: 0x44A42FC Offset: 0x44A32FC VA: 0x44A42FC
-	private bool get_CanTransitionToEndCombatState() { }
+/**
+ * @class public class CombatStateV2 : IScope, ICombatStateV2, IStateLogic<CombatStateV2.Data>, IStateExitable // TypeDefIndex: 6774
+ * @method private bool blnt() { }
+ * @position 4
  */
 unsigned long HAP64::cS_giRso() {
-    return 0x635FF84;
+    return 0xA1657C0;
 }
 
-/*
- * public class CombatStateV2
- * // RVA: 0x44A6034 Offset: 0x44A5034 VA: 0x44A6034 Slot: 11
-	public void TransitionToEndState() { }
+/**
+ * @class public class CombatStateV2 : IScope, ICombatStateV2, IStateLogic<CombatStateV2.Data>, IStateExitable // TypeDefIndex: 6774
+ * @method public void TransitionToEndState() { }
  */
 unsigned long HAP64::cS_ttEso() {
-    return 0x6361D98;
+    return 0xA16846C;
 }
 
+/**
+ * @class public class CombatEndState : CombatBaseState`1, ICombatEndState, ICombatBaseState`1, IStateLogic`1, IStateExitable
+ * @method private void bmjn(CombatProto.Types.CombatState a, CombatPlayerFinishState b, int c) { }
+ * private void EndInvasionSession(CombatProto.Types.CombatState endState, CombatPlayerFinishState finishState, int remainingPokemon) { }
+ */
+unsigned long HAP64::cD_eISo() {
+    return 0xA1D5F24;
+}
 
-/*
- * public class IncidentService
- * // RVA: 0x416EDE4 Offset: 0x416DDE4 VA: 0x416EDE4
-	private void CompletePokestopDialogue() { }
+/**
+ * @class public class IncidentService : MonoBehaviour, IIncidentService // TypeDefIndex: 3838
+ * @method private void bdbp() { }
+ * private void CompletePokestopDialogue() { }
  */
 unsigned long HAP64::cD_cPdo() {
-    return 0x6018D90;
+    return 0x9B36A94;
 }
 
-
-/*
- * public class IncidentService
- * // RVA: 0x416E7D8 Offset: 0x416D7D8 VA: 0x416E7D8
-	private void StartDialogue(ClientPokestopNpcDialogueStepProto pokestopDialogue) { }
+/**
+ * @class public class IncidentService : MonoBehaviour, IIncidentService // TypeDefIndex: 3838
+ * @method private void bdbo(ClientPokestopNpcDialogueStepProto a) { }
+ * private void StartDialogue(ClientPokestopNpcDialogueStepProto pokestopDialogue) { }
  */
 unsigned long HAP64::cD_sInBo() {
-    return 0x6018784;
+    return 0x9B36188;
 }
 
+/**
+ * @class public class IncidentService : MonoBehaviour, IIncidentService // TypeDefIndex: 3838
+ * @method public void StartIncidentEncounter() { }
+ */
+unsigned long HAP64::cS_gCeWo() {
+    return 0x9B373CC;
+}
+
+/**
+ * @class public class CombatCountdownGui : LegacyGuiController, ICombatCountdownGui, IGuiController, IScope, IGuiLayerable, IHideable // TypeDefIndex: 7357
+ * @method private IEnumerator<ISchedule> bnnt() { }
+ * private IEnumerator<ISchedule> Animate() { }
+ */
+unsigned long HAP64::cCg_aCo() {
+    return 0xA2BA094;
+}

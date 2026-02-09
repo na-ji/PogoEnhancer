@@ -27,6 +27,8 @@ std::map<int, int> ItemRemover::popInventoryData() {
 
 void ItemRemover::clearInventoryItems() {
     void *recycleItemPtr = ProtoCache::instance().getSendRecycleItem();
+    // TODO: handle new parameter
+    // public IPromise<RecycleItemOutProto> RecycleItem(ItemInventoryItemWidget.ItemData itemData, int numToRecycle, ISet<Item> expiringItemsCopy) { }
     void *(*sendRecycleItem)(void *, int, int) = (void *(*)(void *, int, int)) (recycleItemPtr);
 
     std::map<int, int> inventory = this->popInventoryData();

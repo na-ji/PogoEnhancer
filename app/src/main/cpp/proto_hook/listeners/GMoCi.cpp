@@ -462,6 +462,7 @@ void GMoCi::reqR(Il2CppUtil::Class &getRoutesProtoClass,
     }
 
     gRp *getRoutesProtoInstance = reinterpret_cast<gRp *>(getRoutesProtoClass.objectNew(true));
+    getRoutesProtoInstance->cellIdsToRequest = RepeatedField_UInt64::create();
 
     if (getRoutesProtoInstance == nullptr) {
         Logger::debug("Failed initializing routes proto");

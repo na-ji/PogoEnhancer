@@ -335,7 +335,7 @@ void StaticReplacements::encName() {
     originalSetMonUi(instance, mapMpn, weatherInt);
 #elif defined(__aarch64__)
     auto weatherInt = reinterpret_cast<uint64_t> (invocationContext->get_nth_argument_ptr(2));
-    nameTextOffset = 0x50;
+    nameTextOffset = 0x60;
 
     void (*originalSetMonUi)(void *, void*, uint64_t);
     originalSetMonUi = (void (*)(void *, void*, uint64_t)) (originalFunctionPtr);
@@ -346,7 +346,9 @@ void StaticReplacements::encName() {
     Logger::debug("Got weather " + std::to_string(weatherInt));
 
     if (instance == nullptr || !InjectionSettings::instance().isReplaceEncounterNames()) {
-        Logger::debug("Null in inventory line or encounter name-replacement disabled, calling original");
+        Logger::debug("Null in inventory line or encounter name-replacement disabled, calling original: " +
+        ProtoCache::convertPointerToReadableString(instance) +
+        " " + std::to_string(InjectionSettings::instance().isReplaceEncounterNames()));
         return;
     }
     void** nameTextPtr =
@@ -849,6 +851,8 @@ bool StaticReplacements::toggleSelect(void *instance) {
 
     bool (*originaltoggleSelect)(void*);
     originaltoggleSelect = (bool (*)(void*))(originalFunctionPtr);
+    // TODO: pass master data
+    // public bool IsSelectionDisabled(IGameMasterData gameMasterData) { }
     bool originalReturn = originaltoggleSelect(instance);
 
     if (InjectionSettings::instance().isMasstransfer()) {

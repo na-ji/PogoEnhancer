@@ -89,15 +89,10 @@ void GWp::thirdBatch() {
             nullptr);
     Logger::debug("Response listener placed");
 
-    /**
-     * class GameMasterData
-     * public O]WMVQUYVQS GetFormSettings(XZQV[SV[VWP QYUSNOMWVVN) { }
-     * Used to be: baseAddr + HAP::get_gMd_iFPo()
-     */
     Logger::debug("Fetching class GameMasterData");
     Il2CppUtil::Class gameMasterDataClass = imageCSharp->getClass("GameMasterData");
-    Logger::debug("Trying to fetch GetFormSettings");
-    void* gameMasterDataClassGetFormSettings = gameMasterDataClass.getMethodByName("GetFormSettings", 1);
+    Logger::debug("Trying to fetch get_IsReady");
+    void* gameMasterDataClassGetFormSettings = gameMasterDataClass.getMethodByName("get_IsReady", 0);
     interceptor.attach_listener(
             gameMasterDataClassGetFormSettings, &formPossible,
             nullptr);
@@ -1106,7 +1101,7 @@ void GWp::placeSecondBatch() {
 /**
  * public sealed class IncenseEncounterOutProto : IMessage<IncenseEncounterOutProto>, IMessage, IEquatable<IncenseEncounterOutProto>, IDeepCloneable<IncenseEncounterOutProto> // TypeDefIndex: 14333
  * 	public IncenseEncounterOutProto.Types.Result W]OZ[W]TOVY() { }
- * 	TODO: Suche nach public + Return type
+ * 	TODO: Search for public + Return type
  */
     void *incEncGetResult = (gpointer) (baseAddr + hap->iEoP_gRo());
     ProtoCache::instance().setIncEncGetResult(incEncGetResult);
