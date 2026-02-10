@@ -364,6 +364,8 @@ unsigned long HAP64::mCh_gMOcIo() {
 /**
  * @class public class OpenGiftGuiController.Factory : InstalledPrefabFactory<OpenGiftGuiController.Data, OpenGiftGuiController> // TypeDefIndex: 6216
  * @method public override OpenGiftGuiController Create(OpenGiftGuiController.Data data) { }
+ * @generic DestroyingFactory<Data, object, object>.Create
+ * @position 1
  */
 unsigned long HAP64::oGgCf_Co() {
     return 0xA07148C;
@@ -615,6 +617,7 @@ unsigned long HAP64::cD_eISo() {
  * @class public class IncidentService : MonoBehaviour, IIncidentService // TypeDefIndex: 3838
  * @method private void bdbp() { }
  * private void CompletePokestopDialogue() { }
+ * @position 2
  */
 unsigned long HAP64::cD_cPdo() {
     return 0x9B36A94;

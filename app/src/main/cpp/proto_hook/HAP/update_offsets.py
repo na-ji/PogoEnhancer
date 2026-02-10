@@ -85,7 +85,7 @@ class DumpClass:
     full_line: str
     methods: List[DumpMethod] = field(default_factory=list)
     fields: List[DumpField] = field(default_factory=list)
-    generic_inst: Dict[str, str] = field(default_factory=dict)  # key -> rva
+    generic_inst: Dict[str, List[str]] = field(default_factory=dict)  # key -> [rva, ...]
 
 
 # ─── Colors ──────────────────────────────────────────────────────────────────
@@ -300,20 +300,17 @@ def parse_hap64(filepath: str) -> List[HapEntry]:
                 field_content = cline_stripped.split('@field', 1)[1].strip()
                 entry.field_line = field_content
                 entry.entry_type = "field"
-                # Parse field: "private int individualAttack_; // 0x70"
-                fm = re.match(r'(?:(\w+)\s+)?(.+?)\s+(\w+)\s*;', field_content)
+                # Parse field: "private readonly int individualAttack_; // 0x70"
+                fm = re.match(
+                    r'(?:(public|private|protected|internal)\s+)?'
+                    r'(?:(?:static|readonly|const|volatile)\s+)*'
+                    r'(.+?)\s+(\w+)\s*;',
+                    field_content
+                )
                 if fm:
-                    entry.field_type = fm.group(2).strip() if fm.group(1) else ""
-                    if fm.group(1):
-                        entry.field_type = fm.group(2).strip()
-                        entry.access = fm.group(1)
+                    entry.access = fm.group(1) or ""
+                    entry.field_type = fm.group(2).strip()
                     entry.field_name = fm.group(3)
-                # Also try: "public Type Name; // 0xXX" 
-                if not entry.field_name:
-                    fm2 = re.match(r'(\w+(?:\s+\w+)*?)\s+(\S+?)\s*;', field_content)
-                    if fm2:
-                        type_parts = fm2.group(1).rsplit(None, 1)
-                        entry.field_name = fm2.group(2)
 
             # @method
             elif '@method' in cline_stripped:
@@ -468,7 +465,9 @@ def parse_dump_cs(filepath: str) -> Dict[str, DumpClass]:
                 gi_name = re.match(r'^\|?-?(.+\..+)', stripped)
                 if gi_name and generic_rva:
                     key = gi_name.group(1).strip()
-                    current_class.generic_inst[key] = generic_rva
+                    if key not in current_class.generic_inst:
+                        current_class.generic_inst[key] = []
+                    current_class.generic_inst[key].append(generic_rva)
                     generic_rva = None
                 continue
 
@@ -623,6 +622,33 @@ def match_field(entry: HapEntry, classes: Dict[str, DumpClass]) -> MatchResult:
                                f"({len(type_matches)} type matches)")
 
 
+def _lookup_generic_inst(key: str, entry: HapEntry, classes: Dict[str, DumpClass],
+                         position: Optional[int]) -> Optional[MatchResult]:
+    """Look up a GenericInstMethod key across all classes, respecting @position for duplicates."""
+    for cname, c in classes.items():
+        rva_list = c.generic_inst.get(key)
+        if rva_list:
+            if len(rva_list) == 1:
+                rva = rva_list[0]
+            elif position is not None and 1 <= position <= len(rva_list):
+                rva = rva_list[position - 1]  # 1-indexed
+            else:
+                # Multiple matches, no @position
+                rvas = ", ".join(rva_list)
+                return MatchResult("failed",
+                                   message=f"Ambiguous generic: {len(rva_list)} entries for "
+                                           f"'{key}' [{rvas}]. Add @position to disambiguate.")
+            if rva.lower() == entry.current_offset.lower():
+                return MatchResult("unchanged", new_offset=rva,
+                                   message=f"GenericInst: {key}")
+            status = "updated" if len(rva_list) == 1 else "warn"
+            return MatchResult(status, new_offset=rva,
+                               message=f"GenericInst: {key}" +
+                                       (f" (position {position}/{len(rva_list)})" if position else ""),
+                               matched_via="@generic")
+    return None
+
+
 def match_method(entry: HapEntry, classes: Dict[str, DumpClass]) -> MatchResult:
     """Match a @method entry against dump.cs."""
     if not entry.class_name:
@@ -637,38 +663,17 @@ def match_method(entry: HapEntry, classes: Dict[str, DumpClass]) -> MatchResult:
 
     # ── Strategy 1: @generic match ──
     if entry.generic_key:
-        rva = dc.generic_inst.get(entry.generic_key)
-        if rva:
-            if rva.lower() == entry.current_offset.lower():
-                return MatchResult("unchanged", new_offset=rva,
-                                   message=f"GenericInst: {entry.generic_key}")
-            return MatchResult("updated", new_offset=rva,
-                               message=f"GenericInst: {entry.generic_key}",
-                               matched_via="@generic")
-        # Also search other classes for this key
-        for cname, c in classes.items():
-            if entry.generic_key in c.generic_inst:
-                rva = c.generic_inst[entry.generic_key]
-                if rva.lower() == entry.current_offset.lower():
-                    return MatchResult("unchanged", new_offset=rva,
-                                       message=f"GenericInst: {entry.generic_key}")
-                return MatchResult("updated", new_offset=rva,
-                                   message=f"GenericInst: {entry.generic_key} (in {cname})",
-                                   matched_via="@generic")
+        result = _lookup_generic_inst(entry.generic_key, entry, classes, entry.position)
+        if result:
+            return result
         return MatchResult("failed", message=f"Generic key '{entry.generic_key}' not found")
 
     # ── Strategy 1b: @comment with GenericInstMethod hint ──
     if entry.comment_hint and entry.comment_hint.startswith('|-'):
         key = entry.comment_hint[2:].strip()
-        for cname, c in classes.items():
-            if key in c.generic_inst:
-                rva = c.generic_inst[key]
-                if rva.lower() == entry.current_offset.lower():
-                    return MatchResult("unchanged", new_offset=rva,
-                                       message=f"GenericInst: {key}")
-                return MatchResult("updated", new_offset=rva,
-                                   message=f"GenericInst: {key}",
-                                   matched_via="@comment generic")
+        result = _lookup_generic_inst(key, entry, classes, None)
+        if result:
+            return result
         return MatchResult("failed", message=f"Generic key '{key}' not found")
 
     # ── Strategy 2: @slot match ──
