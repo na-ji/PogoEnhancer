@@ -262,10 +262,10 @@ unsigned long HAP64::dEoP_gPFo() {
 
 /**
  * @class public class PoiItemSpinner : BasePoiSpinner, IPoiItemSpinner // TypeDefIndex: 15820
- * @method private IPromise<FortSearchOutProto> ckin() { }
+ * @method private IPromise<FortSearchOutProto> ckrz() { }
  */
 unsigned long HAP64::pIs_sSRo() {
-    return 0x96565A8;
+    return 0x9691E0C;
 }
 
 /**
@@ -273,54 +273,54 @@ unsigned long HAP64::pIs_sSRo() {
  * @method public override void Initialize(IMapPlace newMapPlace) { }
  */
 unsigned long HAP64::pIs_Io() {
-    return 0x9655A90;
+    return 0x96912F4;
 }
 
 
 /**
  * @class public class PokemonInventoryGuiController : GuiController, IPokemonInventoryGuiController, IGuiController, IScope, IGuiLayerable, IHideable, ISortablePokemonList, IInitializable // TypeDefIndex: 14783
- * @method private void chon(PokemonListLineItemView a, PokemonProto b, int c) { }
+ * @method private void chxx(PokemonListLineItemView a, PokemonProto b, int c) { }
  * 	-> Search by number of parameters, private, first argument PokemonListLineItemView
  */
 unsigned long HAP64::pIgC_m1o() {
-    return 0x942E670;
+    return 0x9467500;
 }
 
 /**
  * @class public class EncounterPokemon : MonoBehaviour, IEncounterPokemon // TypeDefIndex: 9214
- * @method protected virtual float bsob() { }
+ * @method protected virtual float bswf() { }
  * @slot 49
  */
 unsigned long HAP64::eP_gAPo() {
-    return 0xA5B32C4;
+    return 0xA60EB70;
 }
 
 /**
  * @class public class EncounterPokemon : MonoBehaviour, IEncounterPokemon // TypeDefIndex: 9214
- * @method protected virtual float bsoc() { }
+ * @method protected virtual float bswg() { }
  * @slot 50
  */
 unsigned long HAP64::eP_gDPo() {
-    return 0xA5B397C;
+    return 0xA60F228;
 }
 
 /**
  * @class public class Pokeball : MonoBehaviour, IPokeball, IScope // TypeDefIndex: 9324
- * @method private int bsyf(CatchPokemonOutProto a) { }
+ * @method private int btgj(CatchPokemonOutProto a) { }
  * 	-> Search on private, int return, 1 arg, arg CatchPokemonOutProto (unless obf?)
  */
 unsigned long HAP64::cPOp_gCr() {
-    return 0xA5F5FCC;
+    return 0xA651ABC;
 }
 
 
 /**
  * @class public class EncounterCaptureState : GameState, IEncounterCaptureState // TypeDefIndex: 9161
- * @method private void bsgd(CatchPokemonOutProto a) { }
+ * @method private void bsod(CatchPokemonOutProto a) { }
  * @position 1
  */
 unsigned long HAP64::eCs_rPCo() {
-    return 0xA592ECC;
+    return 0xA5EE0F0;
 }
 
 
@@ -339,7 +339,7 @@ unsigned long HAP64::iEoP_gRo() {
  * @method public PokemonSettingsProto Get_PokemonSettings(PokemonProto pokemon, bool useDisplay = True) { }
  */
 unsigned long HAP64::gMd_gPso() {
-    return 0x8BA9B54;
+    return 0x8BD5214;
 }
 
 
@@ -348,16 +348,16 @@ unsigned long HAP64::gMd_gPso() {
  * @method public PokemonSettingsProto Get_PokemonSettings(int pokemonId) { }
  */
 unsigned long HAP64::gMd_gPsBido() {
-    return 0x8BAA1FC;
+    return 0x8BD58BC;
 }
 
 
 /**
  * @class public class MapContentHandler : MonoBehaviour, ICellManager // TypeDefIndex: 15608
- * @method private void cjos(GetMapObjectsOutProto a) { }
+ * @method private void cjye(GetMapObjectsOutProto a) { }
  */
 unsigned long HAP64::mCh_gMOcIo() {
-    return 0x95BFA08;
+    return 0x95FAFF0;
 }
 
 
@@ -368,7 +368,7 @@ unsigned long HAP64::mCh_gMOcIo() {
  * @position 1
  */
 unsigned long HAP64::oGgCf_Co() {
-    return 0xA07148C;
+    return 0x8281C54;
 }
 
 
@@ -377,7 +377,7 @@ unsigned long HAP64::oGgCf_Co() {
  * @method public IPromise<OpenGiftOutProto> OpenGift(ulong giftboxId, string senderPlayerId, string senderNiaAccountId) { }
  */
 unsigned long HAP64::gRs_oGo() {
-    return 0xA0101B8;
+    return 0xA06207C;
 }
 
 
@@ -386,7 +386,7 @@ unsigned long HAP64::gRs_oGo() {
  * @method public IPromise<CheckSendGiftOutProto> CheckGiftingStatus(string recipientPlayerId) { }
  */
 unsigned long HAP64::gRs_cGSo() {
-    return 0xA010AE0;
+    return 0xA0629A4;
 }
 
 
@@ -395,16 +395,16 @@ unsigned long HAP64::gRs_cGSo() {
  * @method public bool IsSelectionDisabled(IGameMasterData gameMasterData) { }
  */
 unsigned long HAP64::pIMs_tSo() {
-    return 0xB35562C;
+    return 0xB3C1C04;
 }
 
 
 /**
  * @class public sealed class MapPokestop : AbstractMapPlace, IMapPokestop, IMapPlace, IPlace, IDisposable, IScope, IInitializer<IMapPlace.PoiSetupData> // TypeDefIndex: 8608
- * @method private bool bqwk(PokestopIncidentDisplayProto a, bool b) { }
+ * @method private bool bref(PokestopIncidentDisplayProto a, bool b) { }
  */
 unsigned long HAP64::mP_gIiA() {
-    return 0xA4AF0C0;
+    return 0xA509BB4;
 }
 
 /**
@@ -412,7 +412,7 @@ unsigned long HAP64::mP_gIiA() {
  * @method private void OnTap(object sender, EventArgs e) { }
  */
 unsigned long HAP64::mP_oTo() {
-    return 0x9612194;
+    return 0x964D93C;
 }
 
 /**
@@ -421,7 +421,7 @@ unsigned long HAP64::mP_oTo() {
  * -> The only method with 1 parameter and return int
  */
 unsigned long HAP64::iBi_gICo() {
-    return 0x97D7E44;
+    return 0x981B8C0;
 }
 
 /**
@@ -429,16 +429,16 @@ unsigned long HAP64::iBi_gICo() {
  * @method public IPromise<RecycleItemOutProto> RecycleItem(ItemInventoryItemWidget.ItemData itemData, int numToRecycle, ISet<Item> expiringItemsCopy) { }
  */
 unsigned long HAP64::iBi_rIo() {
-    return 0x97DFEDC;
+    return 0x9823954;
 }
 
 /**
  * @class public class ItemBagImpl : IItemBag // TypeDefIndex: 2139
- * @method private void yfr() { }
+ * @method private void ykk() { }
  * @position 2
  */
 unsigned long HAP64::iBi_gIo() {
-    return 0x97D7CE8;
+    return 0x981B764;
 }
 
 /**
@@ -446,7 +446,7 @@ unsigned long HAP64::iBi_gIo() {
  * @method public IPromise<UseItemEncounterOutProto> UseItemForEncounter(Item item, IMapPokemon encounterPokemon) { }
  */
 unsigned long HAP64::iBi_uIfEo() {
-    return 0x97DF33C;
+    return 0x9822DB8;
 }
 
 /**
@@ -456,7 +456,7 @@ unsigned long HAP64::iBi_uIfEo() {
  * @method public static string StripHtmlTags(string sourceToStrip, bool replaceHtmlEntityCharacters) { }
  */
 unsigned long HAP64::sE_hDo() {
-    return 0xA4258EC;
+    return 0xA47FF38;
 }
 
 /**
@@ -465,16 +465,16 @@ unsigned long HAP64::sE_hDo() {
  * @comment |-HashSet<long>.Clear
  */
 unsigned long HAP64::hS_co() {
-    return 0x6232B98;
+    return 0x62540A0;
 }
 
 
 /**
  * @class public class SpatialCacheManager // TypeDefIndex: 16026
- * @method private void ckxx(HashSet<ulong> a, List<ulong> b, List<ulong> c, List<ulong> d) { }
+ * @method private void clhj(HashSet<ulong> a, List<ulong> b, List<ulong> c, List<ulong> d) { }
  */
 unsigned long HAP64::cM_mSFo() {
-    return 0x96BC038;
+    return 0x96F7B80;
 }
 
 
@@ -484,7 +484,7 @@ unsigned long HAP64::cM_mSFo() {
  * Check: 1 parameter -> Item
  */
 unsigned long HAP64::eIs_sABo() {
-    return 0xA597990;
+    return 0xA5F2C4C;
 }
 
 
@@ -493,27 +493,27 @@ unsigned long HAP64::eIs_sABo() {
  * @method public void Initialize() { }
  */
 unsigned long HAP64::bPs_iO() {
-    return 0xA40C30C;
+    return 0xA4668B8;
 }
 
 
 /**
  * @class public class BuddyRpcService : MonoBehaviour, IBuddyRpcService, IDiContainerProvider // TypeDefIndex: 8052
- * @method private void bpcl() { }
+ * @method private void bpkh() { }
  * -> The only private void without arguments
  * 	private void Initialize() { }
  * */
 unsigned long HAP64::bRs_iO() {
-    return 0xA3A6AC0;
+    return 0xA400C74;
 }
 
 
 /**
  * @class public class MapContentHandler : MonoBehaviour, ICellManager // TypeDefIndex: 15608
- * @method private void cjos(GetMapObjectsOutProto a) { }
+ * @method private void cjye(GetMapObjectsOutProto a) { }
  */
 unsigned long HAP64::bSSo_pIo() {
-    return 0x95BFA08;
+    return 0x95FAFF0;
 }
 
 
@@ -538,7 +538,7 @@ unsigned long HAP64::oBgPo_sBGo() {
  * 	1 of 2, simply hook all the private voids?
  */
 unsigned long HAP64::pBi_gSo() {
-    return 0x97F62A0;
+    return 0x983A6EC;
 }
 
 
@@ -547,7 +547,7 @@ unsigned long HAP64::pBi_gSo() {
  * @method public PokemonProto GetPokemon(ulong id) { }
  */
 unsigned long HAP64::pBi_gPpBIo() {
-    return 0x97F26B0;
+    return 0x9836250;
 }
 
 
@@ -556,7 +556,7 @@ unsigned long HAP64::pBi_gPpBIo() {
  * @method public IPromise<ReleasePokemonOutProto> ReleasePokemon(PokemonProto pokemon) { }
  */
 unsigned long HAP64::pBi_rPo() {
-    return 0x97F3750;
+    return 0x98372F0;
 }
 
 
@@ -566,15 +566,15 @@ unsigned long HAP64::pBi_rPo() {
  * @generic RpcHandler.SendRpc<object, object>
  */
 unsigned long HAP64::rH_So() {
-    return 0x5B76574;
+    return 0x5B974CC;
 }
 
 /**
  * @class public class PlayerService : ObservableService<PlayerService.PlayerInfo>, IPlayerService, IObservableService<PlayerService.PlayerInfo>, IOneTimeObservableService<PlayerService.PlayerInfo> // TypeDefIndex: 749
- * @method private void vaz(ClientPlayerProto a) { }
+ * @method private void vdf(ClientPlayerProto a) { }
 */
 unsigned long HAP64::pS_gQo() {
-    return 0xA205E50;
+    return 0xA25ED88;
 }
 
 // TODO: 0.335.0 all below + documentation please
@@ -584,16 +584,16 @@ unsigned long HAP64::pS_gQo() {
  * @method public void ObserveCombatState(CombatProto.Types.CombatState stateOfCombat) { }
  */
 unsigned long HAP64::cD_Io() {
-    return 0xA16737C;
+    return 0xA1BFE44;
 }
 
 /**
  * @class public class CombatStateV2 : IScope, ICombatStateV2, IStateLogic<CombatStateV2.Data>, IStateExitable // TypeDefIndex: 6774
- * @method private bool blnt() { }
+ * @method private bool blvm() { }
  * @position 4
  */
 unsigned long HAP64::cS_giRso() {
-    return 0xA1657C0;
+    return 0xA1BE288;
 }
 
 /**
@@ -601,35 +601,35 @@ unsigned long HAP64::cS_giRso() {
  * @method public void TransitionToEndState() { }
  */
 unsigned long HAP64::cS_ttEso() {
-    return 0xA16846C;
+    return 0xA1C0F34;
 }
 
 /**
  * @class public class CombatEndState : CombatBaseState`1, ICombatEndState, ICombatBaseState`1, IStateLogic`1, IStateExitable
- * @method private void bmjn(CombatProto.Types.CombatState a, CombatPlayerFinishState b, int c) { }
+ * @method private void bmrf(CombatProto.Types.CombatState a, CombatPlayerFinishState b, int c) { }
  * private void EndInvasionSession(CombatProto.Types.CombatState endState, CombatPlayerFinishState finishState, int remainingPokemon) { }
  */
 unsigned long HAP64::cD_eISo() {
-    return 0xA1D5F24;
+    return 0xA22EE5C;
 }
 
 /**
  * @class public class IncidentService : MonoBehaviour, IIncidentService // TypeDefIndex: 3838
- * @method private void bdbp() { }
+ * @method private void bdhh() { }
  * private void CompletePokestopDialogue() { }
  * @position 2
  */
 unsigned long HAP64::cD_cPdo() {
-    return 0x9B36A94;
+    return 0x9B815BC;
 }
 
 /**
  * @class public class IncidentService : MonoBehaviour, IIncidentService // TypeDefIndex: 3838
- * @method private void bdbo(ClientPokestopNpcDialogueStepProto a) { }
+ * @method private void bdhg(ClientPokestopNpcDialogueStepProto a) { }
  * private void StartDialogue(ClientPokestopNpcDialogueStepProto pokestopDialogue) { }
  */
 unsigned long HAP64::cD_sInBo() {
-    return 0x9B36188;
+    return 0x9B80CB0;
 }
 
 /**
@@ -637,14 +637,14 @@ unsigned long HAP64::cD_sInBo() {
  * @method public void StartIncidentEncounter() { }
  */
 unsigned long HAP64::cS_gCeWo() {
-    return 0x9B373CC;
+    return 0x9B81EF4;
 }
 
 /**
  * @class public class CombatCountdownGui : LegacyGuiController, ICombatCountdownGui, IGuiController, IScope, IGuiLayerable, IHideable // TypeDefIndex: 7357
- * @method private IEnumerator<ISchedule> bnnt() { }
+ * @method private IEnumerator<ISchedule> bnvm() { }
  * private IEnumerator<ISchedule> Animate() { }
  */
 unsigned long HAP64::cCg_aCo() {
-    return 0xA2BA094;
+    return 0xA313568;
 }
